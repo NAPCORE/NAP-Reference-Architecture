@@ -15,3 +15,5 @@ The National Access Point Reference Architecture can be used for three different
 -  Third, establish basis for comparison of national body by splitting complex functionalities and processes up. These separated parts can be compared between national bodies. <br>
 
 Due to the ongoing developments in work regarding the harmonisation of the National Access Points, this work describes the first version of the architecture.<br> The status of the National Access Point Reference Architecture is ongoing and the continuous new inputs, e.g. the adoption to the new release ITS directive, from NAPCORE to the architecture will result in updates of the National Body Reference Architecture in 2024.
+
+The arfitecture is based on the FRAME architecture shared here: https://github.com/FRAME-NEXT/FRAME
