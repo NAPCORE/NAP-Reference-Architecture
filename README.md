@@ -29,3 +29,4 @@ This shall update as soon as you save any content file.
 ## Deploying on GitHub Pages
 
 Just push the repository to GitHub. It shall build the page on it's own.
+See: https://napcore.github.io/NAP-Reference-Architecture/
