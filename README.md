@@ -6,9 +6,9 @@ NAP reference Archictecture is an initiative of the [NAPCORE (National Access Po
 
 ## Structure of the repository 
 
-- Releases: NAP Reference Architecture releases (1.0.0, etc.); each release having updated high level views and recommendations according to latest understanding.
-- Working Drafts: Working drafts including revisions to the latest NAP Reference Architecture release.
-- Website: Latest NRA, FRAME repository and FRAME metamodel as a browseable version [website](https://napcore.github.io/NAP-Reference-Architecture/)
+- [Releases](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/releases): NAP Reference Architecture releases (1.0.0, etc.); each release having updated high level views and recommendations according to latest understanding.
+- [Working Drafts](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/drafts): Working drafts including revisions to the latest NAP Reference Architecture release.
+- [Website](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/docs): Latest NRA, FRAME repository and FRAME metamodel as a browseable version [website](https://napcore.github.io/NAP-Reference-Architecture/)
 
 ## Working with NAP Reference Arcirecture models 
 
