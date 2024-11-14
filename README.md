@@ -1,22 +1,22 @@
 # National Access Point Reference Architecture
 
-The National Access Point Reference Architecture (NRA) defines a framework and guideline for the implementation of harmonized national access points across Europe.
+The National Access Point Reference Architecture (NRA) is a set of high level views that enable plans to be made for interoperable NAP. It covers technical aspects, plus the related organisational, legal and business issues. It defines a framework and guideline for the implementation of harmonized national access points across Europe. 
 
-It is based on the FRAME (FRamework Architecture Made for Europe) available at [GitHub](https://github.com/FRAME-NEXT/FRAME) and dedicated websites of [FRAME home](https://frame-online.eu/) and of [FRAME-NEXT project](https://frame-next.eu/).
+NAP reference Archictecture is an initiative of the [NAPCORE (National Access Point Coordination Organisation for Europe)](https://napcore.eu/), a formed organisation to coordinate and harmonise more than 30 mobility data platforms across Europe. It is based on methodology created by the FRAME (FRamework Architecture Made for Europe) available at [GitHub](https://github.com/FRAME-NEXT/FRAME) with dedicated websites of [FRAME home](https://frame-online.eu/) and of [FRAME-NEXT project](https://frame-next.eu/).
 
-This repository hosts:
+## Structure of the repository 
 
-- latest model of the the NRA in the Enterprise Architect SW
-- description of update procedures
-- a [website](https://napcore.github.io/NAP-Reference-Architecture/) with latest NRA, FRAME repository and FRAME metamodel as a browseable version . 
+- Releases: NAP Reference Architecture releases (1.0.0, etc.); each release having updated high level views and recommendations according to latest understanding.
+- Working Drafts: Working drafts including revisions to the latest NAP Reference Architecture release.
+- Website: Latest NRA, FRAME repository and FRAME metamodel as a browseable version [website](https://napcore.github.io/NAP-Reference-Architecture/)
 
-## NRA model 
+## Working with NAP Reference Arcirecture models 
 
-The NRA model is stored as XMI file and as a FRAME toolbox. 
+The NAP Reference Arcirecture models are stored as XMI file and as a FRAME toolbox. 
 
 To open the NRA first the toolbox must be loaded into empty EA project and then XMI with the NRA imported to that file. Any other sequence will break the stereotypes.
 
-## Website with browsable NRA
+## Working with website
 
 The website content is stored in /docs folder.
 
