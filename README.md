@@ -32,7 +32,7 @@ Before using the installed mkdocs command, make sure you activate it's virtualen
 
 Edit files in the docs folder. See https://www.mkdocs.org/user-guide/writing-your-docs/
 
-Run from project root:
+Run from project roote:
 
 $ mkdocs serve
 
