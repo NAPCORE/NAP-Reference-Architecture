@@ -2,51 +2,106 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Reject request</title>
+<title>Provide content metadata</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-function initPage(src) {	
-	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
-		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
-	else
-		parent.initPage(src);
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
 }
 
-function nameClassifier(name, separator)
-{
-  var str = name;
-  var classifierName;
-  var node = document.getElementById('name_classifier');
-  if(node != null)
-  {
-    classifierName = node.innerHTML;
-  }
-  if(classifierName != "")
-  {
-   str += separator + classifierName;
-  }
-  
-  return str;
-}
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
 </script>
+<style>
+
+</style>
 </head>
-<body onload="initPage(this);" class="Content">
-<div class="pageHeader"></div>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Provide content metadata </h1>
+			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../EA3.htm">NAP Reference Architecture</a> / <a href="../../EA318.htm">Supplements</a> / <a href="../EA430.htm">Processes - Optional</a> / <a href="EA432.htm">Objects</a> / <a href="EA435.htm">Content Provider</a> / <a href="EA507.htm">Provide content metadata</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<a href="EA435.htm">Content Provider</a></ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Reject request", " : "))</script>  : Public  &lt;&lt;Activity&gt;&gt; Activity</span>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+	<span class="ObjectTitle">Provide content metadata  : Public  &lt;&lt;Activity&gt;&gt; Activity</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">28.03.2022 16:38:47</td>
+			<td width="85%" class="ObjectDetailsValue">28.03.2022 14:11:22</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">28.03.2022 16:38:59</td>
+			<td class="ObjectDetailsValue">28.03.2022 14:11:48</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -78,54 +133,29 @@ function nameClassifier(name, separator)
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{A667D902-FB6D-4272-A8C5-0385CB1F173E}</td>
+			<td class="ObjectDetailsValue">{E4A7EA6C-4A31-47ca-97BD-C17E43EC1D58}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA419.htm">Register user</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA418.htm">Exchange content</a>, <a href="../EA416.htm">_Exchange restricted content</a></td>
 		</tr>
 	</table>
 	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('FlowFrom');" id="FlowFromTitle">Flow From</li>
-			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
-			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+			<li onClick="parent != null ? parent.toggleItem('TaggedVal') : toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent != null ? parent.toggleItem('Links') : toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
-		<div class="ItemBody" id="FlowFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="50%" class="TableHeading">Element</td>
-					<td width="50%" class="TableHeading">Name</td>
-				</tr>
-				<tr>
-					<td width="50%" class="TableRow" valign="top">
-						<a href="EA508.htm">Request ok?</a><br />
-						Decision &nbsp;
-					</td>
-					<td width="50%" class="TableRow" valign="top">no</td>					
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="2">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLinkFlow1695" onclick="parent.toggleDiv('detailsDIVLinkFlow1695', 'DetailsImageLinkFlow1695')" />Details:
-							<div id="detailsDIVLinkFlow1695" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
@@ -138,12 +168,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1696" onclick="parent.toggleDiv('detailsDIVScenario1696','DetailsImageScenario1696')" />Details:
-						<div id="detailsDIVScenario1696" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: Task,Sub-Process<br />Default: Task<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">adHoc</td>
@@ -151,12 +178,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1697" onclick="parent.toggleDiv('detailsDIVScenario1697','DetailsImageScenario1697')" />Details:
-						<div id="detailsDIVScenario1697" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">adHocOrdering</td>
@@ -164,12 +188,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1698" onclick="parent.toggleDiv('detailsDIVScenario1698','DetailsImageScenario1698')" />Details:
-						<div id="detailsDIVScenario1698" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: Parallel,Sequential<br />Default: Parallel<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">behavior</td>
@@ -177,12 +198,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1699" onclick="parent.toggleDiv('detailsDIVScenario1699','DetailsImageScenario1699')" />Details:
-						<div id="detailsDIVScenario1699" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: None,One,All,Complex<br />Default: All<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">cancelRemainingInstances</td>
@@ -190,12 +208,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1700" onclick="parent.toggleDiv('detailsDIVScenario1700','DetailsImageScenario1700')" />Details:
-						<div id="detailsDIVScenario1700" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: true<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">completionQuantity</td>
@@ -203,12 +218,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1701" onclick="parent.toggleDiv('detailsDIVScenario1701','DetailsImageScenario1701')" />Details:
-						<div id="detailsDIVScenario1701" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Default: 1<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">implementation</td>
@@ -216,12 +228,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1702" onclick="parent.toggleDiv('detailsDIVScenario1702','DetailsImageScenario1702')" />Details:
-						<div id="detailsDIVScenario1702" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: ##webService,##unspecified<br />Default: ##unspecified<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">instantiate</td>
@@ -229,12 +238,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1703" onclick="parent.toggleDiv('detailsDIVScenario1703','DetailsImageScenario1703')" />Details:
-						<div id="detailsDIVScenario1703" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">isACalledActivity</td>
@@ -242,12 +248,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1704" onclick="parent.toggleDiv('detailsDIVScenario1704','DetailsImageScenario1704')" />Details:
-						<div id="detailsDIVScenario1704" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">isATransaction</td>
@@ -255,12 +258,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1705" onclick="parent.toggleDiv('detailsDIVScenario1705','DetailsImageScenario1705')" />Details:
-						<div id="detailsDIVScenario1705" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">isForCompensation</td>
@@ -268,12 +268,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1706" onclick="parent.toggleDiv('detailsDIVScenario1706','DetailsImageScenario1706')" />Details:
-						<div id="detailsDIVScenario1706" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">isSequential</td>
@@ -281,12 +278,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1707" onclick="parent.toggleDiv('detailsDIVScenario1707','DetailsImageScenario1707')" />Details:
-						<div id="detailsDIVScenario1707" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">loopCharacteristics</td>
@@ -294,12 +288,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1708" onclick="parent.toggleDiv('detailsDIVScenario1708','DetailsImageScenario1708')" />Details:
-						<div id="detailsDIVScenario1708" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: None,Standard,MultiInstance<br />Default: None<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">startQuantity</td>
@@ -307,12 +298,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1709" onclick="parent.toggleDiv('detailsDIVScenario1709','DetailsImageScenario1709')" />Details:
-						<div id="detailsDIVScenario1709" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Default: 1<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">state</td>
@@ -320,12 +308,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1710" onclick="parent.toggleDiv('detailsDIVScenario1710','DetailsImageScenario1710')" />Details:
-						<div id="detailsDIVScenario1710" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: None,Ready,Active,Cancelled,Aborting,Aborted,Completing,Completed<br />Default: None<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">taskType</td>
@@ -333,12 +318,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1711" onclick="parent.toggleDiv('detailsDIVScenario1711','DetailsImageScenario1711')" />Details:
-						<div id="detailsDIVScenario1711" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: BusinessRule,Manual,Receive,Service,Send,Script,User,Abstract<br />Default: Abstract<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">testBefore</td>
@@ -346,12 +328,9 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1712" onclick="parent.toggleDiv('detailsDIVScenario1712','DetailsImageScenario1712')" />Details:
-						<div id="detailsDIVScenario1712" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow" valign="top">triggeredByEvent</td>
@@ -359,17 +338,14 @@ function nameClassifier(name, separator)
 			</tr>	
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario1713" onclick="parent.toggleDiv('detailsDIVScenario1713','DetailsImageScenario1713')" />Details:
-						<div id="detailsDIVScenario1713" class="DetailsDiv" >
+					Details:
 						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
 
-						</div>
-					</div>
 				</td>
 			</tr>
 	</table>
 </div>		<div class="ItemBody" id="CustomPropertiesTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>
 					<td width="70%" class="TableHeading">Value</td>
@@ -412,7 +388,7 @@ function nameClassifier(name, separator)
 
 			</table>
 		</div>		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Object</td>
 					<td width="10%" class="TableHeading">Type</td>
@@ -421,8 +397,22 @@ function nameClassifier(name, separator)
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA503.htm">«Activity» Inform user</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA439.htm">«DataObject» ID verification result</a></td>
+					<td width="10%" class="TableRow" valign="top">DataObject</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA509.htm">«Activity» request upload authorization</a></td>
 					<td width="10%" class="TableRow" valign="top">Activity</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA441.htm">«DataObject» metadata</a></td>
+					<td width="10%" class="TableRow" valign="top">DataObject</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
@@ -431,7 +421,13 @@ function nameClassifier(name, separator)
 			</table>
 		</div>
 	</div>
-<div class="pageFooter"></div>
- 
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
 </body>
 </html>
+

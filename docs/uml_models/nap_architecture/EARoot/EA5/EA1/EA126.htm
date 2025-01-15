@@ -2,51 +2,116 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>D3.18 NAP Data</title>
+<title>Low Level Functions</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-function initPage(src) {	
-	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
-		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
-	else
-		parent.initPage(src);
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
 }
 
-function nameClassifier(name, separator)
-{
-  var str = name;
-  var classifierName;
-  var node = document.getElementById('name_classifier');
-  if(node != null)
-  {
-    classifierName = node.innerHTML;
-  }
-  if(classifierName != "")
-  {
-   str += separator + classifierName;
-  }
-  
-  return str;
-}
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
 </script>
+<style>
+
+</style>
 </head>
-<body onload="initPage(this);" class="Content">
-<div class="pageHeader"></div>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Low Level Functions </h1>
+			<!-- <img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../EA3.htm">NAP Reference Architecture</a> / <a href="../EA120.htm">NAP Functional View</a> / <a href="EA125.htm">Functions</a> / <a href="./EA1/EA128.htm">Low Level Functions</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA129.htm">F3.6.1 Manage NAP Metadata Repository</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA130.htm">F3.6.10 Provide Data Quality Checks</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA131.htm">F3.6.2 Manage Registrations and Provide Authorisation Service</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA132.htm">F3.6.3 Manage Content Providers Metadata</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA133.htm">F3.6.4 Manage Metadata Retrieval</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA134.htm">F3.6.5 Provide NAP User Support</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA135.htm">F3.6.6 Provide Metadata Quality Checks</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA136.htm">F3.6.7 Manage NAP Data Repository</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA137.htm">F3.6.8 Manage Data Input</a></li>
+<li><img src="../../../images/21.png" alt="Activity"/> <a href="./EA1/EA138.htm">F3.6.9 Manage NAP Data Retrieval</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("D3.18 NAP Data", " : "))</script>  : Public  &lt;&lt;FRAME_Datastore&gt;&gt; FRAME_Datastore</span>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+	<span class="ObjectTitle">Low Level Functions  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">30.08.2021 15:55:27</td>
+			<td width="85%" class="ObjectDetailsValue">13.01.2025 21:16:39</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">29.09.2024 1:32:40</td>
+			<td class="ObjectDetailsValue">13.01.2025 21:17:52</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -55,11 +120,11 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsValue">1.0</td>
 		</tr>
 		<tr id="proj02" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
-			<td class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsValue">1.0</td>
 		</tr>
 		<tr id="proj03" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
@@ -78,273 +143,31 @@ function nameClassifier(name, separator)
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B1156E38-B7ED-4dcd-BD87-C003C660A85A}</td>
+			<td class="ObjectDetailsValue">{C439A5EC-B0A3-4123-9A06-C06C24B846DE}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue">SSTP Function Allocation, <a href="../EA116.htm">02 NAP Functional View - Data Platform</a></td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">This Data Store shall be used within the Manage Traffic Functional Area.&#160;&#160;It shall contain information objects that provide traffic and travel data.&#160;&#160;&#160;&lt;br/&gt;&lt;br/&gt;Each information object in the Store shall contain the following data objects: &lt;br/&gt;&lt;br/&gt;(1) actual stored traffic or travel related data that is considered as a compact and comprehensive data content &lt;br/&gt;(2) data quality information&#160;&#160;&lt;br/&gt;(3) relation of the data content to the metadata elements, allowing to identify data distribution &lt;br/&gt;(4) access credentials to stored content identifying the information object creator and updater and its readers &lt;br/&gt;(5) last update time information &lt;br/&gt;(6) size of the object &lt;br/&gt;&lt;br/&gt;Data content to be stored in the data store is given mainly by the obligations to make certain data content accessible via the NAP. The obligation together with a list of data is stipulated in the ITS Directive 2010/40/EU and its revised version (EU) 2023/2661 and complementary Delegated Regulations 885/2013, 886/2013, 2015/962, 2017/1926, 2022/670 and 2023/1804.&lt;br/&gt;&lt;br/&gt;==========&#160;&#160;&lt;br/&gt;&lt;br/&gt;TODO: &lt;br/&gt;- check if information object is complete &lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Low Level Functions perform a specific part of the data input, process, or information output process and have no component functions.&lt;br/&gt;</div>
 
-	<div class="TableGroup" id="TableGroup">
-		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
-		</ul>
-		<div class="ItemBody" id="AssociationsToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
+ </div>
+ </td>
 				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA152.htm">«FRAME_Low_Level_Data_Flow» mt_read_NAP_data</a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink226" onclick="parent.toggleDiv('detailsDIVLink226','DetailsImageLink226')" />Details:
-							<div id="detailsDIVLink226" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA137.htm">«FRAME_Low_Level_Data_Flow» mt_load_NAP_data</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink227" onclick="parent.toggleDiv('detailsDIVLink227','DetailsImageLink227')" />Details:
-							<div id="detailsDIVLink227" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA1/EA1/EA45.htm">«FRAME_Information_Object» Traffic and travel data</a><br />
-						FRAME_Information_Object «stored in» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink228" onclick="parent.toggleDiv('detailsDIVLink228','DetailsImageLink228')" />Details:
-							<div id="detailsDIVLink228" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-<div class="ItemBody" id="TaggedValTable">
-	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-		<tr>
-			<td width="50%" class="TableHeading">Tag</td>
-			<td width="50%" class="TableHeading">Value</td>
-		</tr>
-					<tr>
-				<td width="50%" class="TableRow" valign="top">DataStore_SecurityLevel</td>
-				<td width="50%" class="TableRow" valign="top">None</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario229" onclick="parent.toggleDiv('detailsDIVScenario229','DetailsImageScenario229')" />Details:
-						<div id="detailsDIVScenario229" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: None<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">isUnlimited</td>
-				<td width="50%" class="TableRow" valign="top">false</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario230" onclick="parent.toggleDiv('detailsDIVScenario230','DetailsImageScenario230')" />Details:
-						<div id="detailsDIVScenario230" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: true,false<br />Default: false<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">itemKind</td>
-				<td width="50%" class="TableRow" valign="top">Information</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario231" onclick="parent.toggleDiv('detailsDIVScenario231','DetailsImageScenario231')" />Details:
-						<div id="detailsDIVScenario231" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Values: Physical,Information<br />Default: Information<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Maximum acceptable request times per application and/or service</td>
-				<td width="50%" class="TableRow" valign="top">1000</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario232" onclick="parent.toggleDiv('detailsDIVScenario232','DetailsImageScenario232')" />Details:
-						<div id="detailsDIVScenario232" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: 1000<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Number of Users supported</td>
-				<td width="50%" class="TableRow" valign="top">1</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario233" onclick="parent.toggleDiv('detailsDIVScenario233','DetailsImageScenario233')" />Details:
-						<div id="detailsDIVScenario233" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: 1<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Physical Capacity</td>
-				<td width="50%" class="TableRow" valign="top">1 Byte</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario234" onclick="parent.toggleDiv('detailsDIVScenario234','DetailsImageScenario234')" />Details:
-						<div id="detailsDIVScenario234" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: 1 Byte<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Planned data storage duration over time</td>
-				<td width="50%" class="TableRow" valign="top">1 Year</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario235" onclick="parent.toggleDiv('detailsDIVScenario235','DetailsImageScenario235')" />Details:
-						<div id="detailsDIVScenario235" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: 1 Year<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">Planned Service level per application and partner</td>
-				<td width="50%" class="TableRow" valign="top">None</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario236" onclick="parent.toggleDiv('detailsDIVScenario236','DetailsImageScenario236')" />Details:
-						<div id="detailsDIVScenario236" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: None<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">transaction numbers over time</td>
-				<td width="50%" class="TableRow" valign="top">10</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario237" onclick="parent.toggleDiv('detailsDIVScenario237','DetailsImageScenario237')" />Details:
-						<div id="detailsDIVScenario237" class="DetailsDiv" >
-						<div class="ObjectDetailsNotes">Default: 10<br /></div>
-
-						</div>
-					</div>
-				</td>
-			</tr>
-	</table>
-</div>		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Object</td>
-					<td width="10%" class="TableHeading">Type</td>
-					<td width="10%" class="TableHeading">Connection</td>
-					<td width="10%" class="TableHeading">Direction</td>
-					<td width="40%" class="TableHeading">Notes</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top">EU NAP Central Application</td>
-					<td width="10%" class="TableRow" valign="top">Object</td>
-					<td width="10%" class="TableRow" valign="top">Usage</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../EA7/EA1/EA251.htm">«FRAME_Application» Data Management Application</a></td>
-					<td width="10%" class="TableRow" valign="top">FRAME_Application</td>
-					<td width="10%" class="TableRow" valign="top">Usage</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-	</div>
-<div class="pageFooter"></div>
- 
+			</tbody>
+		</table>
+		
+</div>
 </body>
 </html>
+

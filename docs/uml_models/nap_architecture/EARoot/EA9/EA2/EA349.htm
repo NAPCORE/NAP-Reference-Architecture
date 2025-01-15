@@ -2,51 +2,109 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title></title>
+<title>Dataset information KPIs</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-function initPage(src) {	
-	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
-		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
-	else
-		parent.initPage(src);
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
 }
 
-function nameClassifier(name, separator)
-{
-  var str = name;
-  var classifierName;
-  var node = document.getElementById('name_classifier');
-  if(node != null)
-  {
-    classifierName = node.innerHTML;
-  }
-  if(classifierName != "")
-  {
-   str += separator + classifierName;
-  }
-  
-  return str;
-}
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
 </script>
+<style>
+
+</style>
 </head>
-<body onload="initPage(this);" class="Content">
-<div class="pageHeader"></div>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Dataset information KPIs </h1>
+			<!-- <img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../EA3.htm">NAP Reference Architecture</a> / <a href="../EA318.htm">Supplements</a> / <a href="EA343.htm">KPI Framework</a> / <a href="./EA5/EA398.htm">Dataset information KPIs</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../../images/175.png" alt="Diagram"/> <a href="./EA5/EA396.htm">Dataset information KPIs</a></li>
+<li><img src="../../../images/19.png" alt="Requirement"/> <a href="./EA5/EA399.htm">KPI 5.1 Documentation & description of datasets</a></li>
+<li><img src="../../../images/19.png" alt="Requirement"/> <a href="./EA5/EA400.htm">KPI 5.2 Classification of datasets</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("", " : "))</script>  : Public   Note</span>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+	<span class="ObjectTitle">Dataset information KPIs  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">01.10.2024 12:26:06</td>
+			<td width="85%" class="ObjectDetailsValue">29.07.2024 12:18:02</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">01.10.2024 12:26:25</td>
+			<td class="ObjectDetailsValue">14.01.2025 23:40:56</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -78,25 +136,31 @@ function nameClassifier(name, separator)
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{D22271DF-9051-4990-9963-F155FA643DCF}</td>
+			<td class="ObjectDetailsValue">{47DE9210-1486-4ea0-B2F8-482CBB5052BB}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA331.htm">00_Introduction</a></td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">To assess a NAP LoS based on a framework of Key Performance Indicators (KPIs) related to the offered NAP interoperability features and services. The tool is called &lt;b&gt;&#8220;NAP LoS KPI Framework tool&#8221; (NLKF)&lt;/b&gt; and it is used by NAP operators as a self-assessment survey in periodic (yearly) scoring exercises (starting in spring 2023). NLKF helps NAP harmonization activities such as:&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Supporting the NAP operators with insights on current state and gaps on existing and new potential NAP features, that can be added to its roadmap in order to increase performance to a desired level;&lt;/li&gt;&lt;li&gt;Supporting supervising bodies of European or national regulations and agreements;&lt;/li&gt;&lt;li&gt;Creating NAP European benchmark reference based on the minimum, average and other statistic scores of all Member states.&lt;/li&gt;&lt;/ul&gt;<br />NLKF is as bottom-up principle, as a state of practice in Europe going from individual KPIs. NLKF includes both quantitative and qualitative KPIs and differentiates the provided answers when a different platform (2 types) is operated for one or more Delegated Regulations supplementing the ITS Directive (2010/40/EC). The aggregated results for feature categories or for a NAP as a whole are expressed in quantitative manner (Grade of Achievement, GA) or qualitative (Maturity Level, LoS 1 to 5). &lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Datasets should be described in detail to help data consumers understand and assess their relevance. This includes using standard vocabularies or dictionaries (e.g., DCAT-AP) to reduce ambiguity and enhance machine readability.&lt;br/&gt;KPIs:&lt;br/&gt;&lt;ul&gt;<br />&lt;li&gt;Extent of dataset descriptions&lt;/li&gt;&lt;li&gt;Use of standard/controlled vocabularies&lt;/li&gt;&lt;li&gt;Clarity and machine understandability of datasets&lt;/li&gt;&lt;/ul&gt;<br />&lt;font color=&quot;#ff0000&quot;&gt;TODO: provide full list of KPIs&lt;/font&gt;&lt;br/&gt;&lt;br/&gt;</div>
 
-<div class="pageFooter"></div>
- 
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
 </body>
 </html>
+
