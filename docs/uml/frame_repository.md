@@ -1,8 +1,10 @@
 ---
 model_name: FRAME Repository
-version: 1.0.1
+version: 5.1.1
 target_url: ../uml_models/frame_repository/index.htm
 ---
+
+FRAME repository is a library of User Needs and functions, which are grouped into several Functional Areas covering whole ITS. The repository is used in first phases of creation of the specific architectures, when an architect selects based on the stakeholders aspirations a user needs fulfilling those aspirations and leading to a specific functionality.
 
 ## Browsable HTML UML model
 
@@ -14,10 +16,6 @@ target_url: ../uml_models/frame_repository/index.htm
 
 ## ChangeLog
 
-### Version 1.0.1
+### Version 5.1.1
 
-- add "Open Doors to Access point" need
-
-### Version 1.0.0
-
-- initial version
+- Final version of the meta-model from project FRAME-NEXT as available from the project website [https://frame-next.eu/](https://frame-next.eu/) in section downloads and documents.

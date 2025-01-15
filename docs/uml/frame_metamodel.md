@@ -1,8 +1,13 @@
 ---
 model_name: FRAME Meta Model
-version: 1.0.1
+version: 5.1.1
 target_url: ../uml_models/frame_metamodel/index.htm
 ---
+
+FRAME meta model defines objects used by updated FRAME. The meta-model has a different structuring than the final views of the architecture, it structures the FRAME artefacts into five sections. The first four sections develop from a high-level perspective down to more technical details of the service. The last layer contains artefacts, which are relevant for all sections. 
+
+The sections are __Motivational Layer__, __Business Layer__, __Application Layer__, __Data Layer__ and __External__
+
 
 ## Browsable HTML UML model
 
@@ -14,10 +19,7 @@ target_url: ../uml_models/frame_metamodel/index.htm
 
 ## ChangeLog
 
-### Version 1.1.0
+### Version 5.1.1
 
-- add need: Provide protocol documentation
+- Final version of the meta-model from project FRAME-NEXT as available from the project website [https://frame-next.eu/](https://frame-next.eu/) in section downloads and documents.
 
-### Version 1.0.0
-
-- initial version

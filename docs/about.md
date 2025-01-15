@@ -1,10 +1,14 @@
 # About
 
+!!! warning
+
+    this page is under development
+
 ## Project NAPCORE
 
 TODO
 
 ## Authors
 
-- Petr Bureš
-- Johny Doony
+- Petr Bureš, 
+- Benjamin Whitsch
