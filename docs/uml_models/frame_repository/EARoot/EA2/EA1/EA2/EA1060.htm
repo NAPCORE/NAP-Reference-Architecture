@@ -4,38 +4,93 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>F2.1.11.1 Manage eCall Message Transmission</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-function initPage(src) {	
-	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
-		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
-	else
-		parent.initPage(src);
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
 }
 
-function nameClassifier(name, separator)
-{
-  var str = name;
-  var classifierName;
-  var node = document.getElementById('name_classifier');
-  if(node != null)
-  {
-    classifierName = node.innerHTML;
-  }
-  if(classifierName != "")
-  {
-   str += separator + classifierName;
-  }
-  
-  return str;
-}
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
 </script>
+<style>
+
+</style>
 </head>
-<body onload="initPage(this);" class="Content">
-<div class="pageHeader"></div>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> F2.1.11.1 Manage eCall Message Transmission </h1>
+			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../../../EA3.htm">Frame Repository</a> / <a href="../../EA976.htm">Frame Functional View</a> / <a href="../EA985.htm">Functionality</a> / <a href="EA1053.htm">Functional Area F2 - Provide Safety and Emergency Facilities</a> / <a href="EA1054.htm">F2. Provide Safety and Emergency Facilities</a> / <a href="EA1055.htm">F2.1 Manage Emergencies</a> / <a href="EA1068.htm">F2.1.11 Manage eCall Messages</a> / <a href="EA1060.htm">F2.1.11.1 Manage eCall Message Transmission</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<a href="EA1068.htm">F2.1.11 Manage eCall Messages</a></ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<div id="name_classifier" style="display: none;"></div>
-	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("F2.1.11.1 Manage eCall Message Transmission", " : "))</script>  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+	<span class="ObjectTitle">F2.1.11.1 Manage eCall Message Transmission  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
 			<td width="85%" class="ObjectDetailsValue">11.03.2021 17:10:22</td>
@@ -46,7 +101,7 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -78,11 +133,11 @@ function nameClassifier(name, separator)
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
@@ -91,21 +146,20 @@ function nameClassifier(name, separator)
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue">02 eCall Functional View, eCall Functions Allocation, <a href="EA1045.htm">Functional Tree of Area F2 Provide Safety and Emergency Facilities</a>, <a href="EA1041.htm">DFD F2.1.11 Manage eCall Messages</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1045.htm">Functional Tree of Area F2 Provide Safety and Emergency Facilities</a>, <a href="EA1041.htm">DFD F2.1.11 Manage eCall Messages</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">This Function shall be capable of providing the following facilities:&lt;br/&gt;&lt;br/&gt;(1) The ability to receive eCall messages being sent from Vehicles that are operating in the road network.&lt;br/&gt;(2) The ability to request other functionality to provide details of how to communicate with the most appropriate Public Safety Answering Point (PSAP) provider which can respond to and service the eCall message.&lt;br/&gt;(3) The ability to pass on the eCall message to the most appropriate PSAP once the details of how to connect to it have been provided.&lt;br/&gt;(4) The ability to keep the communication channel between the Host Vehicle and the PSAP open.&lt;br/&gt;(5) The ability to pass through eCall response messages from the PSAP to the Host Vehicle and to send reports of the status of the eCall message response to other functionality.&lt;br/&gt;(6) The ability to periodically communicate with all available PSAP&#39;s and to update their status depending on the availability that they each report.&lt;br/&gt;(7) If the connection with the Vehicle is lost the ability to request the previously used contact detains from the Manage PSAP Data Stores function.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent.toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
-			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent != null ? parent.toggleItem('Requirements') : toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 		<div class="ItemBody" id="AssociationsToTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -113,7 +167,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3392.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_first_acknowledgement </a><br />
+						<a href="../../EA3/EA2/EA3442.htm">«FRAME_Low_Level_Data_Flow» psef_request_PSAP_data_for_eCall</a><br />
 						FRAME_Low_Level_Data_Flow «IN» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -127,8 +181,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4104" onclick="parent.toggleDiv('detailsDIVLink4104','DetailsImageLink4104')" />Details:
-							<div id="detailsDIVLink4104" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4074" /></button>Details:
+							<div id="detailsDIVLink4074" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -150,8 +204,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4105" onclick="parent.toggleDiv('detailsDIVLink4105','DetailsImageLink4105')" />Details:
-							<div id="detailsDIVLink4105" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4075" /></button>Details:
+							<div id="detailsDIVLink4075" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -159,76 +213,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3435.htm">«FRAME_Low_Level_Data_Flow» psef_PSAP_status_request</a><br />
-						FRAME_Low_Level_Data_Flow «instants of» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4106" onclick="parent.toggleDiv('detailsDIVLink4106','DetailsImageLink4106')" />Details:
-							<div id="detailsDIVLink4106" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3399.htm">«FRAME_Low_Level_Data_Flow» psef_available_PSAP_list</a><br />
-						FRAME_Low_Level_Data_Flow «instants of» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4107" onclick="parent.toggleDiv('detailsDIVLink4107','DetailsImageLink4107')" />Details:
-							<div id="detailsDIVLink4107" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1068.htm">«FRAME_High_Level_Function» F2.1.11 Manage eCall Messages</a><br />
-						FRAME_High_Level_Function «componentof» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4108" onclick="parent.toggleDiv('detailsDIVLink4108','DetailsImageLink4108')" />Details:
-							<div id="detailsDIVLink4108" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3442.htm">«FRAME_Low_Level_Data_Flow» psef_request_PSAP_data_for_eCall</a><br />
+						<a href="../../EA3/EA2/EA3392.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_first_acknowledgement </a><br />
 						FRAME_Low_Level_Data_Flow «IN» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -242,54 +227,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4109" onclick="parent.toggleDiv('detailsDIVLink4109','DetailsImageLink4109')" />Details:
-							<div id="detailsDIVLink4109" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3393.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_message_failure</a><br />
-						FRAME_Low_Level_Data_Flow «instants of» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4110" onclick="parent.toggleDiv('detailsDIVLink4110','DetailsImageLink4110')" />Details:
-							<div id="detailsDIVLink4110" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3394.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_responses</a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4111" onclick="parent.toggleDiv('detailsDIVLink4111','DetailsImageLink4111')" />Details:
-							<div id="detailsDIVLink4111" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4076" /></button>Details:
+							<div id="detailsDIVLink4076" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -311,8 +250,123 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4112" onclick="parent.toggleDiv('detailsDIVLink4112','DetailsImageLink4112')" />Details:
-							<div id="detailsDIVLink4112" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4077" /></button>Details:
+							<div id="detailsDIVLink4077" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3394.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_responses</a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4078" /></button>Details:
+							<div id="detailsDIVLink4078" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3435.htm">«FRAME_Low_Level_Data_Flow» psef_PSAP_status_request</a><br />
+						FRAME_Low_Level_Data_Flow «instants of» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4079" /></button>Details:
+							<div id="detailsDIVLink4079" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA1068.htm">«FRAME_High_Level_Function» F2.1.11 Manage eCall Messages</a><br />
+						FRAME_High_Level_Function «componentof» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4080" /></button>Details:
+							<div id="detailsDIVLink4080" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3393.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_message_failure</a><br />
+						FRAME_Low_Level_Data_Flow «instants of» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4081" /></button>Details:
+							<div id="detailsDIVLink4081" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3399.htm">«FRAME_Low_Level_Data_Flow» psef_available_PSAP_list</a><br />
+						FRAME_Low_Level_Data_Flow «instants of» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4082" /></button>Details:
+							<div id="detailsDIVLink4082" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -322,7 +376,7 @@ function nameClassifier(name, separator)
 			</table>
 		</div>
 		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -330,7 +384,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3502.htm">«FRAME_Low_Level_Data_Flow» pshvs.psef_eCall_message</a><br />
+						<a href="../../EA3/EA2/EA3412.htm">«FRAME_Low_Level_Data_Flow» psef_eCall_responses </a><br />
 						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -344,8 +398,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4113" onclick="parent.toggleDiv('detailsDIVLink4113','DetailsImageLink4113')" />Details:
-							<div id="detailsDIVLink4113" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4083" /></button>Details:
+							<div id="detailsDIVLink4083" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -367,8 +421,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4114" onclick="parent.toggleDiv('detailsDIVLink4114','DetailsImageLink4114')" />Details:
-							<div id="detailsDIVLink4114" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4084" /></button>Details:
+							<div id="detailsDIVLink4084" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -390,8 +444,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4115" onclick="parent.toggleDiv('detailsDIVLink4115','DetailsImageLink4115')" />Details:
-							<div id="detailsDIVLink4115" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4085" /></button>Details:
+							<div id="detailsDIVLink4085" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -399,7 +453,7 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3412.htm">«FRAME_Low_Level_Data_Flow» psef_eCall_responses </a><br />
+						<a href="../../EA3/EA2/EA3502.htm">«FRAME_Low_Level_Data_Flow» pshvs.psef_eCall_message</a><br />
 						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -413,8 +467,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4116" onclick="parent.toggleDiv('detailsDIVLink4116','DetailsImageLink4116')" />Details:
-							<div id="detailsDIVLink4116" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink4086" /></button>Details:
+							<div id="detailsDIVLink4086" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -424,7 +478,7 @@ function nameClassifier(name, separator)
 			</table>
 		</div>
 		<div class="ItemBody" id="RequirementsTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="60%" class="TableHeading">Requirement</td>
 					<td width="10%" class="TableHeading">Type</td>
@@ -443,8 +497,8 @@ function nameClassifier(name, separator)
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="6">
-						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement4117" onclick="parent.toggleDiv('detailsDIVRequirement4117','DetailsImageRequirement4117')" />Details:
-							<div id="detailsDIVRequirement4117" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement4087" /></button>Details:
+							<div id="detailsDIVRequirement4087" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">(a) at initial start-up and periodically thereafter request a list of available PSAP&#39;s from the Manage PSAP Data Stores function;&lt;br/&gt;(b) when the response to the request in (a) is received, use the data objects that it contains to send a status request to every available PSAP;&lt;br/&gt;(c) as the responses to the requests in (b) are received, send updates of the status of each PSAP to the&#160;&#160;Manage PSAP Data Stores function;&lt;br/&gt;(d) continuously monitor for receipt of a data flow containing the eCall message from functionality in the Provide Support for Host Vehicle Systems Functional Area;&lt;br/&gt;(e) when a data flow in (d) is received, check that all the required data objects are present and if not send an indication that the eCall message needs to be sent again back to the functionality in the Provide Support for Host Vehicle Systems Functional Area;&lt;br/&gt;(f) if all the required data objects are found to be present in (e) extract the Vehicle location plus details of how to contact the Host Vehicle and send them to the Manage PSAP Data Stores function;&lt;br/&gt;(g) continuously monitor for receipt of a data flow providing a response to the data flow sent in (f) above;&lt;br/&gt;(h) when the data flow in (g) is received, extract the data it contains and use if to send the eCall message to the PSAP specified in the data flow;&lt;br/&gt;(i) once (h) has been completed, send a data flow containing a &quot;first acknowledgement&quot; of the eCall message to the functionality in the Provide Support for Host Vehicle Systems Functional Area;&lt;br/&gt;(j) if the data flow received in (g) did not include details of an appropriate PSAP, send a data flow containing a PSAP unavailable indication to the functionality in the Provide Support for Host Vehicle Systems Functional Area;&lt;br/&gt;(k) following on from (h) pass any messages received from the PSAP through to the Provide Support for Host Vehicle Systems Functional Area for output in the Host Vehicle&lt;br/&gt;(l) if there is no evidence that the message (k) has been received, request contact details for the Host Vehicle from the Manage PSAP Data Stores function;&lt;br/&gt;(m) use the contact details provided in (l) to send the message received from the PSAP to the Host Vehicle;&lt;br/&gt;(n) if after a period of time no further messages are received in (k), send a &quot;eCall message response finished&quot; indication to the Manage PSAP Data Stores function.&lt;br/&gt;</div>
 
 							</div>
@@ -455,7 +509,7 @@ function nameClassifier(name, separator)
 			</table>
 		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>
 					<td width="70%" class="TableHeading">Value</td>
@@ -472,34 +526,14 @@ function nameClassifier(name, separator)
 
 
 			</table>
-		</div>		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Object</td>
-					<td width="10%" class="TableHeading">Type</td>
-					<td width="10%" class="TableHeading">Connection</td>
-					<td width="10%" class="TableHeading">Direction</td>
-					<td width="40%" class="TableHeading">Notes</td>
+		</div>	</div>
+ </div>
+ </td>
 				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top">Transfer eCall Call</td>
-					<td width="10%" class="TableRow" valign="top">Object</td>
-					<td width="10%" class="TableRow" valign="top">Realization</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top">Send redirected eCall to PSAP</td>
-					<td width="10%" class="TableRow" valign="top">Object</td>
-					<td width="10%" class="TableRow" valign="top">Realization</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-	</div>
-<div class="pageFooter"></div>
- 
+			</tbody>
+		</table>
+		
+</div>
 </body>
 </html>
+
