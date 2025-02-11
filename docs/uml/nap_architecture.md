@@ -16,8 +16,8 @@ The NAP reference architecture is created for two basic NAP types Metadata direc
 
 ## ChangeLog
 
-### Version 0.7.1
+### Version 5.1.1 - 20250210 
 
-- TODO
+- see the [changelog file](uml_models/changelog.docx)
 
 
