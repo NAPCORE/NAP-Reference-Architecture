@@ -4,93 +4,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>F5.15.4 Provide Vehicle Trajectory Information to Driver</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-
-  function switchProjectProperties() {
-			if (document.getElementById("proj00").style.display == "none") {
-				document.getElementById("proj00").style.display = "revert";
-				document.getElementById("proj01").style.display = "revert";
-				document.getElementById("proj02").style.display = "revert";
-				document.getElementById("proj03").style.display = "revert";
-				document.getElementById("proj04").style.display = "revert";
-				document.getElementById("proj05").style.display = "revert";
-			} else {
-				document.getElementById("proj00").style.display = "none";
-				document.getElementById("proj01").style.display = "none";
-				document.getElementById("proj02").style.display = "none";
-				document.getElementById("proj03").style.display = "none";
-				document.getElementById("proj04").style.display = "none";
-				document.getElementById("proj05").style.display = "none";
-			}
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
 }
 
-		function switchAdvancedProperties(){
-
-			if (document.getElementById("adv00").style.display == "none") {;
-				document.getElementById("adv00").style.display = "revert";
-				document.getElementById("adv01").style.display = "revert";
-			} else {
-				document.getElementById("adv00").style.display = "none";
-				document.getElementById("adv01").style.display = "none";
-			}
-		}
-		function initPage()
-        {			
-			var divs = document.getElementsByClassName("ObjectDetailsNotes");
-			for (var j = 0; j < divs.length; j++) {
-				var tmpStr = divs[j].innerHTML;
-				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
-				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
-
-				tmpStr = tmpStr.replace(/&gt;/g, ">");
-				tmpStr = tmpStr.replace(/&lt;/g, "<");
-
-				divs[j].innerHTML = tmpStr;
-			}
-
-            if (document.getElementById('TableGroup') != null)
-            {
-                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
-            }
-
-        }
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
 </script>
-<style>
-
-</style>
 </head>
-<body onload="initPage();">
-<div class="section group" >
-
-		<div class="col span_2_of_2 header_frame">
-			<h1> F5.15.4 Provide Vehicle Trajectory Information to Driver </h1>
-			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
-			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
-		</div>
-		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../../../EA3.htm">Frame Repository</a> / <a href="../../EA976.htm">Frame Functional View</a> / <a href="../EA985.htm">Functionality</a> / <a href="EA1344.htm">Functional Area F5 - Provide Support for Host Vehicle Systems</a> / <a href="EA1345.htm">F5. Provide Support for Host Vehicle Services</a> / <a href="EA1388.htm">F5.15 Provide In-vehicle Detection and Analysis</a> / <a href="EA1392.htm">F5.15.4 Provide Vehicle Trajectory Information to Driver</a></p>
-		</div>
-			
-		<table class="contentmaintable">
-			<!-- <tfoot>
-				<tr>
-					<td>foot1</td>
-					<td>foot2</td>
-				</tr>
-			</tfoot> -->
-			<tbody>
-				<tr>
-					<td class="indexcell">
-						<div class="projectBrowserTitle">Project: </div>
-						<ul>
-<a href="EA1388.htm">F5.15 Provide In-vehicle Detection and Analysis</a></ul>
-
-					</td>
-					<td class="contentcell"><div class="pageHeader"></div>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">F5.15.4 Provide Vehicle Trajectory Information to Driver  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
-	<table border="0" class="ObjectDetails">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("F5.15.4 Provide Vehicle Trajectory Information to Driver", " : "))</script>  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
 			<td width="85%" class="ObjectDetailsValue">24.10.2019 12:44:33</td>
@@ -101,7 +46,7 @@
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -133,11 +78,11 @@
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
@@ -153,13 +98,13 @@
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent != null ? parent.toggleItem('Requirements') : toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
-			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 		<div class="ItemBody" id="AssociationsToTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -167,7 +112,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3852.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_traffic_signal_advisory_message </a><br />
+						<a href="../../EA3/EA2/EA3837.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_low_visibility_warning_and_advice </a><br />
 						FRAME_Low_Level_Data_Flow «IN» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -181,169 +126,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10026" /></button>Details:
-							<div id="detailsDIVLink10026" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3845.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_slippery_road_surface_ahead_warning </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10027" /></button>Details:
-							<div id="detailsDIVLink10027" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3818.htm">«FRAME_Low_Level_Data_Flow» td-ghost_driver_detected_ahead_warning </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10028" /></button>Details:
-							<div id="detailsDIVLink10028" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3854.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_vehicle_collision_warning </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10029" /></button>Details:
-							<div id="detailsDIVLink10029" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1345.htm">«FRAME_Functional_Area» F5. Provide Support for Host Vehicle Services</a><br />
-						FRAME_Functional_Area «componentof» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10030" /></button>Details:
-							<div id="detailsDIVLink10030" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3838.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_nearby_other_vehicle_and_road_user_information </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10031" /></button>Details:
-							<div id="detailsDIVLink10031" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1388.htm">«FRAME_High_Level_Function» F5.15 Provide In-vehicle Detection and Analysis</a><br />
-						FRAME_High_Level_Function «componentof» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10032" /></button>Details:
-							<div id="detailsDIVLink10032" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3850.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_traffic_queue_ahead_warning_and_advice </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10033" /></button>Details:
-							<div id="detailsDIVLink10033" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10014" onclick="parent.toggleDiv('detailsDIVLink10014','DetailsImageLink10014')" />Details:
+							<div id="detailsDIVLink10014" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -365,8 +149,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10034" /></button>Details:
-							<div id="detailsDIVLink10034" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10015" onclick="parent.toggleDiv('detailsDIVLink10015','DetailsImageLink10015')" />Details:
+							<div id="detailsDIVLink10015" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -374,7 +158,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3821.htm">«FRAME_Low_Level_Data_Flow» td-host_vehicle_ghost_driver_warning </a><br />
+						<a href="../../EA3/EA2/EA3845.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_slippery_road_surface_ahead_warning </a><br />
 						FRAME_Low_Level_Data_Flow «IN» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -388,8 +172,31 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10035" /></button>Details:
-							<div id="detailsDIVLink10035" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10016" onclick="parent.toggleDiv('detailsDIVLink10016','DetailsImageLink10016')" />Details:
+							<div id="detailsDIVLink10016" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA1388.htm">«FRAME_High_Level_Function» F5.15 Provide In-vehicle Detection and Analysis</a><br />
+						FRAME_High_Level_Function «componentof» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10017" onclick="parent.toggleDiv('detailsDIVLink10017','DetailsImageLink10017')" />Details:
+							<div id="detailsDIVLink10017" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -411,8 +218,54 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10036" /></button>Details:
-							<div id="detailsDIVLink10036" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10018" onclick="parent.toggleDiv('detailsDIVLink10018','DetailsImageLink10018')" />Details:
+							<div id="detailsDIVLink10018" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3854.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_vehicle_collision_warning </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10019" onclick="parent.toggleDiv('detailsDIVLink10019','DetailsImageLink10019')" />Details:
+							<div id="detailsDIVLink10019" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA1345.htm">«FRAME_Functional_Area» F5. Provide Support for Host Vehicle Services</a><br />
+						FRAME_Functional_Area «componentof» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10020" onclick="parent.toggleDiv('detailsDIVLink10020','DetailsImageLink10020')" />Details:
+							<div id="detailsDIVLink10020" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -434,8 +287,54 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10037" /></button>Details:
-							<div id="detailsDIVLink10037" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10021" onclick="parent.toggleDiv('detailsDIVLink10021','DetailsImageLink10021')" />Details:
+							<div id="detailsDIVLink10021" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3818.htm">«FRAME_Low_Level_Data_Flow» td-ghost_driver_detected_ahead_warning </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10022" onclick="parent.toggleDiv('detailsDIVLink10022','DetailsImageLink10022')" />Details:
+							<div id="detailsDIVLink10022" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3852.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_traffic_signal_advisory_message </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10023" onclick="parent.toggleDiv('detailsDIVLink10023','DetailsImageLink10023')" />Details:
+							<div id="detailsDIVLink10023" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -457,54 +356,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10038" /></button>Details:
-							<div id="detailsDIVLink10038" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3837.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_low_visibility_warning_and_advice </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10039" /></button>Details:
-							<div id="detailsDIVLink10039" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3848.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_stationary_objects_warning_and_advice </a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10040" /></button>Details:
-							<div id="detailsDIVLink10040" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10024" onclick="parent.toggleDiv('detailsDIVLink10024','DetailsImageLink10024')" />Details:
+							<div id="detailsDIVLink10024" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -526,8 +379,100 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10041" /></button>Details:
-							<div id="detailsDIVLink10041" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10025" onclick="parent.toggleDiv('detailsDIVLink10025','DetailsImageLink10025')" />Details:
+							<div id="detailsDIVLink10025" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3821.htm">«FRAME_Low_Level_Data_Flow» td-host_vehicle_ghost_driver_warning </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10026" onclick="parent.toggleDiv('detailsDIVLink10026','DetailsImageLink10026')" />Details:
+							<div id="detailsDIVLink10026" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3848.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_stationary_objects_warning_and_advice </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10027" onclick="parent.toggleDiv('detailsDIVLink10027','DetailsImageLink10027')" />Details:
+							<div id="detailsDIVLink10027" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3838.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_nearby_other_vehicle_and_road_user_information </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10028" onclick="parent.toggleDiv('detailsDIVLink10028','DetailsImageLink10028')" />Details:
+							<div id="detailsDIVLink10028" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3850.htm">«FRAME_Low_Level_Data_Flow» td-pshvs_traffic_queue_ahead_warning_and_advice </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10029" onclick="parent.toggleDiv('detailsDIVLink10029','DetailsImageLink10029')" />Details:
+							<div id="detailsDIVLink10029" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -537,57 +482,11 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="AssociationsFromTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3527.htm">«FRAME_Low_Level_Data_Flow» pshvs_emergency_vehicle_stationary_ahead</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10042" /></button>Details:
-							<div id="detailsDIVLink10042" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3622.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_collision_warning</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10043" /></button>Details:
-							<div id="detailsDIVLink10043" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -605,8 +504,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10044" /></button>Details:
-							<div id="detailsDIVLink10044" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10030" onclick="parent.toggleDiv('detailsDIVLink10030','DetailsImageLink10030')" />Details:
+							<div id="detailsDIVLink10030" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -614,122 +513,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA158.htm">«FRAME_User_Need» 7.4.2.4</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10045" /></button>Details:
-							<div id="detailsDIVLink10045" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA771.htm">«FRAME_User_Need» 7.4.1.34</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10046" /></button>Details:
-							<div id="detailsDIVLink10046" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA778.htm">«FRAME_User_Need» 7.4.1.40</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10047" /></button>Details:
-							<div id="detailsDIVLink10047" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA776.htm">«FRAME_User_Need» 7.4.1.39</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10048" /></button>Details:
-							<div id="detailsDIVLink10048" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA155.htm">«FRAME_User_Need» 7.4.2.1</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10049" /></button>Details:
-							<div id="detailsDIVLink10049" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3621.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_behaviour_warning</a><br />
+						<a href="../../EA3/EA2/EA3634.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_lane_departure_warning</a><br />
 						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -743,8 +527,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10050" /></button>Details:
-							<div id="detailsDIVLink10050" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10031" onclick="parent.toggleDiv('detailsDIVLink10031','DetailsImageLink10031')" />Details:
+							<div id="detailsDIVLink10031" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -752,7 +536,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA657.htm">«FRAME_User_Need» 7.4.6.3</a><br />
+						<a href="../../../EA1/EA583.htm">«FRAME_User_Need» 7.4.6.3</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -766,8 +550,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10051" /></button>Details:
-							<div id="detailsDIVLink10051" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10032" onclick="parent.toggleDiv('detailsDIVLink10032','DetailsImageLink10032')" />Details:
+							<div id="detailsDIVLink10032" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -775,7 +559,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA644.htm">«FRAME_User_Need» 7.4.6.14</a><br />
+						<a href="../../../EA1/EA139.htm">«FRAME_User_Need» 7.4.2.4</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -789,8 +573,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10052" /></button>Details:
-							<div id="detailsDIVLink10052" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10033" onclick="parent.toggleDiv('detailsDIVLink10033','DetailsImageLink10033')" />Details:
+							<div id="detailsDIVLink10033" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -798,7 +582,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA647.htm">«FRAME_User_Need» 7.4.6.17</a><br />
+						<a href="../../../EA1/EA691.htm">«FRAME_User_Need» 7.4.1.37</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -812,54 +596,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10053" /></button>Details:
-							<div id="detailsDIVLink10053" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3596.htm">«FRAME_Low_Level_Data_Flow» pshvs_slippery_road_surface_warning</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10054" /></button>Details:
-							<div id="detailsDIVLink10054" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA487.htm">«FRAME_User_Need» 7.4.8.1</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10055" /></button>Details:
-							<div id="detailsDIVLink10055" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10034" onclick="parent.toggleDiv('detailsDIVLink10034','DetailsImageLink10034')" />Details:
+							<div id="detailsDIVLink10034" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -881,7 +619,490 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10056" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10035" onclick="parent.toggleDiv('detailsDIVLink10035','DetailsImageLink10035')" />Details:
+							<div id="detailsDIVLink10035" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA578.htm">«FRAME_User_Need» 7.4.6.21</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10036" onclick="parent.toggleDiv('detailsDIVLink10036','DetailsImageLink10036')" />Details:
+							<div id="detailsDIVLink10036" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA688.htm">«FRAME_User_Need» 7.4.1.34</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10037" onclick="parent.toggleDiv('detailsDIVLink10037','DetailsImageLink10037')" />Details:
+							<div id="detailsDIVLink10037" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3619.htm">«FRAME_Low_Level_Data_Flow» pshvs_un-safe_overtaking_manoeuvre_warning</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10038" onclick="parent.toggleDiv('detailsDIVLink10038','DetailsImageLink10038')" />Details:
+							<div id="detailsDIVLink10038" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA589.htm">«FRAME_User_Need» 7.4.6.9</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10039" onclick="parent.toggleDiv('detailsDIVLink10039','DetailsImageLink10039')" />Details:
+							<div id="detailsDIVLink10039" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3598.htm">«FRAME_Low_Level_Data_Flow» pshvs_stationary_objects_warning_and_advice</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10040" onclick="parent.toggleDiv('detailsDIVLink10040','DetailsImageLink10040')" />Details:
+							<div id="detailsDIVLink10040" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3609.htm">«FRAME_Low_Level_Data_Flow» pshvs_traffic_queue_ahead_warning_and_advice</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10041" onclick="parent.toggleDiv('detailsDIVLink10041','DetailsImageLink10041')" />Details:
+							<div id="detailsDIVLink10041" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3561.htm">«FRAME_Low_Level_Data_Flow» pshvs_low_visibility_warning_and_advice</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10042" onclick="parent.toggleDiv('detailsDIVLink10042','DetailsImageLink10042')" />Details:
+							<div id="detailsDIVLink10042" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3527.htm">«FRAME_Low_Level_Data_Flow» pshvs_emergency_vehicle_stationary_ahead</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10043" onclick="parent.toggleDiv('detailsDIVLink10043','DetailsImageLink10043')" />Details:
+							<div id="detailsDIVLink10043" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3610.htm">«FRAME_Low_Level_Data_Flow» pshvs_traffic_signal_advisory_message</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10044" onclick="parent.toggleDiv('detailsDIVLink10044','DetailsImageLink10044')" />Details:
+							<div id="detailsDIVLink10044" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA692.htm">«FRAME_User_Need» 7.4.1.38</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10045" onclick="parent.toggleDiv('detailsDIVLink10045','DetailsImageLink10045')" />Details:
+							<div id="detailsDIVLink10045" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA587.htm">«FRAME_User_Need» 7.4.6.7</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10046" onclick="parent.toggleDiv('detailsDIVLink10046','DetailsImageLink10046')" />Details:
+							<div id="detailsDIVLink10046" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA569.htm">«FRAME_User_Need» 7.4.6.13</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10047" onclick="parent.toggleDiv('detailsDIVLink10047','DetailsImageLink10047')" />Details:
+							<div id="detailsDIVLink10047" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA567.htm">«FRAME_User_Need» 7.4.6.11</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10048" onclick="parent.toggleDiv('detailsDIVLink10048','DetailsImageLink10048')" />Details:
+							<div id="detailsDIVLink10048" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA576.htm">«FRAME_User_Need» 7.4.6.2</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10049" onclick="parent.toggleDiv('detailsDIVLink10049','DetailsImageLink10049')" />Details:
+							<div id="detailsDIVLink10049" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3577.htm">«FRAME_Low_Level_Data_Flow» pshvs_red_light_running_warnng</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10050" onclick="parent.toggleDiv('detailsDIVLink10050','DetailsImageLink10050')" />Details:
+							<div id="detailsDIVLink10050" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA696.htm">«FRAME_User_Need» 7.4.1.41</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10051" onclick="parent.toggleDiv('detailsDIVLink10051','DetailsImageLink10051')" />Details:
+							<div id="detailsDIVLink10051" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA573.htm">«FRAME_User_Need» 7.4.6.17</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10052" onclick="parent.toggleDiv('detailsDIVLink10052','DetailsImageLink10052')" />Details:
+							<div id="detailsDIVLink10052" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA579.htm">«FRAME_User_Need» 7.4.6.22</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10053" onclick="parent.toggleDiv('detailsDIVLink10053','DetailsImageLink10053')" />Details:
+							<div id="detailsDIVLink10053" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA136.htm">«FRAME_User_Need» 7.4.2.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10054" onclick="parent.toggleDiv('detailsDIVLink10054','DetailsImageLink10054')" />Details:
+							<div id="detailsDIVLink10054" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA437.htm">«FRAME_User_Need» 7.4.8.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10055" onclick="parent.toggleDiv('detailsDIVLink10055','DetailsImageLink10055')" />Details:
+							<div id="detailsDIVLink10055" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA586.htm">«FRAME_User_Need» 7.4.6.6</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10056" onclick="parent.toggleDiv('detailsDIVLink10056','DetailsImageLink10056')" />Details:
 							<div id="detailsDIVLink10056" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -904,8 +1125,77 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10057" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10057" onclick="parent.toggleDiv('detailsDIVLink10057','DetailsImageLink10057')" />Details:
 							<div id="detailsDIVLink10057" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3596.htm">«FRAME_Low_Level_Data_Flow» pshvs_slippery_road_surface_warning</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10058" onclick="parent.toggleDiv('detailsDIVLink10058','DetailsImageLink10058')" />Details:
+							<div id="detailsDIVLink10058" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA570.htm">«FRAME_User_Need» 7.4.6.14</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10059" onclick="parent.toggleDiv('detailsDIVLink10059','DetailsImageLink10059')" />Details:
+							<div id="detailsDIVLink10059" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA585.htm">«FRAME_User_Need» 7.4.6.5</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10060" onclick="parent.toggleDiv('detailsDIVLink10060','DetailsImageLink10060')" />Details:
+							<div id="detailsDIVLink10060" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -927,76 +1217,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10058" /></button>Details:
-							<div id="detailsDIVLink10058" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA641.htm">«FRAME_User_Need» 7.4.6.11</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10059" /></button>Details:
-							<div id="detailsDIVLink10059" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3610.htm">«FRAME_Low_Level_Data_Flow» pshvs_traffic_signal_advisory_message</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10060" /></button>Details:
-							<div id="detailsDIVLink10060" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA659.htm">«FRAME_User_Need» 7.4.6.5</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10061" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10061" onclick="parent.toggleDiv('detailsDIVLink10061','DetailsImageLink10061')" />Details:
 							<div id="detailsDIVLink10061" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1005,7 +1226,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA650.htm">«FRAME_User_Need» 7.4.6.2</a><br />
+						<a href="../../../EA1/EA568.htm">«FRAME_User_Need» 7.4.6.12</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1019,7 +1240,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10062" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10062" onclick="parent.toggleDiv('detailsDIVLink10062','DetailsImageLink10062')" />Details:
 							<div id="detailsDIVLink10062" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1028,7 +1249,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA660.htm">«FRAME_User_Need» 7.4.6.6</a><br />
+						<a href="../../../EA1/EA575.htm">«FRAME_User_Need» 7.4.6.19</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1042,7 +1263,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10063" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10063" onclick="parent.toggleDiv('detailsDIVLink10063','DetailsImageLink10063')" />Details:
 							<div id="detailsDIVLink10063" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1051,7 +1272,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA774.htm">«FRAME_User_Need» 7.4.1.37</a><br />
+						<a href="../../../EA1/EA179.htm">«FRAME_User_Need» 7.4.7.1</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1065,7 +1286,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10064" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10064" onclick="parent.toggleDiv('detailsDIVLink10064','DetailsImageLink10064')" />Details:
 							<div id="detailsDIVLink10064" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1074,8 +1295,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3598.htm">«FRAME_Low_Level_Data_Flow» pshvs_stationary_objects_warning_and_advice</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
+						<a href="../../../EA1/EA695.htm">«FRAME_User_Need» 7.4.1.40</a><br />
+						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -1088,7 +1309,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10065" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10065" onclick="parent.toggleDiv('detailsDIVLink10065','DetailsImageLink10065')" />Details:
 							<div id="detailsDIVLink10065" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1097,8 +1318,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA649.htm">«FRAME_User_Need» 7.4.6.19</a><br />
-						FRAME_User_Need «Servedby» 
+						<a href="../../EA3/EA2/EA3621.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_behaviour_warning</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -1111,7 +1332,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10066" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10066" onclick="parent.toggleDiv('detailsDIVLink10066','DetailsImageLink10066')" />Details:
 							<div id="detailsDIVLink10066" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1120,7 +1341,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA775.htm">«FRAME_User_Need» 7.4.1.38</a><br />
+						<a href="../../../EA1/EA693.htm">«FRAME_User_Need» 7.4.1.39</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1134,7 +1355,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10067" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10067" onclick="parent.toggleDiv('detailsDIVLink10067','DetailsImageLink10067')" />Details:
 							<div id="detailsDIVLink10067" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1143,8 +1364,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA643.htm">«FRAME_User_Need» 7.4.6.13</a><br />
-						FRAME_User_Need «Servedby» 
+						<a href="../../EA3/EA2/EA3622.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_collision_warning</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -1157,7 +1378,7 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10068" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10068" onclick="parent.toggleDiv('detailsDIVLink10068','DetailsImageLink10068')" />Details:
 							<div id="detailsDIVLink10068" class="DetailsDiv" >
 							&nbsp;
 							</div>
@@ -1166,7 +1387,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA642.htm">«FRAME_User_Need» 7.4.6.12</a><br />
+						<a href="../../../EA1/EA138.htm">«FRAME_User_Need» 7.4.2.3</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1180,284 +1401,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10069" /></button>Details:
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10069" onclick="parent.toggleDiv('detailsDIVLink10069','DetailsImageLink10069')" />Details:
 							<div id="detailsDIVLink10069" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3561.htm">«FRAME_Low_Level_Data_Flow» pshvs_low_visibility_warning_and_advice</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10070" /></button>Details:
-							<div id="detailsDIVLink10070" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3619.htm">«FRAME_Low_Level_Data_Flow» pshvs_un-safe_overtaking_manoeuvre_warning</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10071" /></button>Details:
-							<div id="detailsDIVLink10071" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA661.htm">«FRAME_User_Need» 7.4.6.7</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10072" /></button>Details:
-							<div id="detailsDIVLink10072" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3577.htm">«FRAME_Low_Level_Data_Flow» pshvs_red_light_running_warnng</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10073" /></button>Details:
-							<div id="detailsDIVLink10073" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA157.htm">«FRAME_User_Need» 7.4.2.3</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10074" /></button>Details:
-							<div id="detailsDIVLink10074" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA653.htm">«FRAME_User_Need» 7.4.6.22</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10075" /></button>Details:
-							<div id="detailsDIVLink10075" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3634.htm">«FRAME_Low_Level_Data_Flow» pshvs_vehicle_lane_departure_warning</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10076" /></button>Details:
-							<div id="detailsDIVLink10076" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA663.htm">«FRAME_User_Need» 7.4.6.9</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10077" /></button>Details:
-							<div id="detailsDIVLink10077" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA779.htm">«FRAME_User_Need» 7.4.1.41</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10078" /></button>Details:
-							<div id="detailsDIVLink10078" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA652.htm">«FRAME_User_Need» 7.4.6.21</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10079" /></button>Details:
-							<div id="detailsDIVLink10079" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA204.htm">«FRAME_User_Need» 7.4.7.1</a><br />
-						FRAME_User_Need «Servedby» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10080" /></button>Details:
-							<div id="detailsDIVLink10080" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3609.htm">«FRAME_Low_Level_Data_Flow» pshvs_traffic_queue_ahead_warning_and_advice</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink10081" /></button>Details:
-							<div id="detailsDIVLink10081" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -1467,7 +1412,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="RequirementsTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="60%" class="TableHeading">Requirement</td>
 					<td width="10%" class="TableHeading">Type</td>
@@ -1486,8 +1431,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="6">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement10082" /></button>Details:
-							<div id="detailsDIVRequirement10082" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement10070" onclick="parent.toggleDiv('detailsDIVRequirement10070','DetailsImageRequirement10070')" />Details:
+							<div id="detailsDIVRequirement10070" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">(a) continuously monitor for receipt of any of the input data flows;&lt;br/&gt;(b) when any of the data flows is received in (a) convert the data it contains into a message, format it and output it to the driver in the appropriate data flow;&lt;br/&gt;(c) always ensure that the display of the &quot;warning&quot; messages take priority over the display of all other messages.&lt;br/&gt;</div>
 
 							</div>
@@ -1498,7 +1443,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>
 					<td width="70%" class="TableHeading">Value</td>
@@ -1516,13 +1461,7 @@
 
 			</table>
 		</div>	</div>
- </div>
- </td>
-				</tr>
-			</tbody>
-		</table>
-		
-</div>
+<div class="pageFooter"></div>
+ 
 </body>
 </html>
-

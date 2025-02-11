@@ -4,93 +4,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>F9.2.3 Manage Bus Lane Use Data</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-
-  function switchProjectProperties() {
-			if (document.getElementById("proj00").style.display == "none") {
-				document.getElementById("proj00").style.display = "revert";
-				document.getElementById("proj01").style.display = "revert";
-				document.getElementById("proj02").style.display = "revert";
-				document.getElementById("proj03").style.display = "revert";
-				document.getElementById("proj04").style.display = "revert";
-				document.getElementById("proj05").style.display = "revert";
-			} else {
-				document.getElementById("proj00").style.display = "none";
-				document.getElementById("proj01").style.display = "none";
-				document.getElementById("proj02").style.display = "none";
-				document.getElementById("proj03").style.display = "none";
-				document.getElementById("proj04").style.display = "none";
-				document.getElementById("proj05").style.display = "none";
-			}
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
 }
 
-		function switchAdvancedProperties(){
-
-			if (document.getElementById("adv00").style.display == "none") {;
-				document.getElementById("adv00").style.display = "revert";
-				document.getElementById("adv01").style.display = "revert";
-			} else {
-				document.getElementById("adv00").style.display = "none";
-				document.getElementById("adv01").style.display = "none";
-			}
-		}
-		function initPage()
-        {			
-			var divs = document.getElementsByClassName("ObjectDetailsNotes");
-			for (var j = 0; j < divs.length; j++) {
-				var tmpStr = divs[j].innerHTML;
-				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
-				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
-
-				tmpStr = tmpStr.replace(/&gt;/g, ">");
-				tmpStr = tmpStr.replace(/&lt;/g, "<");
-
-				divs[j].innerHTML = tmpStr;
-			}
-
-            if (document.getElementById('TableGroup') != null)
-            {
-                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
-            }
-
-        }
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
 </script>
-<style>
-
-</style>
 </head>
-<body onload="initPage();">
-<div class="section group" >
-
-		<div class="col span_2_of_2 header_frame">
-			<h1> F9.2.3 Manage Bus Lane Use Data </h1>
-			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
-			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
-		</div>
-		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../../../EA3.htm">Frame Repository</a> / <a href="../../EA976.htm">Frame Functional View</a> / <a href="../EA985.htm">Functionality</a> / <a href="EA1532.htm">Functional Area F9 - Provide Support for Co-operative Systems</a> / <a href="EA1533.htm">F9. Provide Support for Cooperative Systems</a> / <a href="EA1556.htm">F9.2 Provide Access to Bus Lanes</a> / <a href="EA1538.htm">F9.2.3 Manage Bus Lane Use Data</a></p>
-		</div>
-			
-		<table class="contentmaintable">
-			<!-- <tfoot>
-				<tr>
-					<td>foot1</td>
-					<td>foot2</td>
-				</tr>
-			</tfoot> -->
-			<tbody>
-				<tr>
-					<td class="indexcell">
-						<div class="projectBrowserTitle">Project: </div>
-						<ul>
-<a href="EA1556.htm">F9.2 Provide Access to Bus Lanes</a></ul>
-
-					</td>
-					<td class="contentcell"><div class="pageHeader"></div>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">F9.2.3 Manage Bus Lane Use Data  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
-	<table border="0" class="ObjectDetails">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("F9.2.3 Manage Bus Lane Use Data", " : "))</script>  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
 			<td width="85%" class="ObjectDetailsValue">24.10.2019 12:44:41</td>
@@ -101,7 +46,7 @@
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -133,11 +78,11 @@
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
@@ -146,24 +91,47 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA1524.htm">DFD F9.2 Provide Flexible Lane Allocation</a>, <a href="EA1520.htm">Functional Tree of Area F9 Provide Support for Cooperative Systems</a></td>
+			<td class="ObjectDetailsValue"><a href="EA1520.htm">Functional Tree of Area F9 Provide Support for Cooperative Systems</a>, <a href="EA1524.htm">DFD F9.2 Provide Flexible Lane Allocation</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">This Function shall be capable of providing the following facilities:&lt;br/&gt;&lt;br/&gt;(1) The ability to manage the data about the availability and use of Bus Lanes by other Vehicles.&lt;br/&gt;(2) The ability to receive data about the road network and the location of Bus Lanes within it, load that data into the store of Bus Lane Data and enable that data to be updated through input from the Road Network Operator.&lt;br/&gt;(3) The ability to also receive data about traffic using the road network from the Manage Traffic functionality, plus data from the Manage Public Transport functionality about the PT service schedules and predicted arrival times at stops, all of which shall be loaded into the store of Bus Lane Data as historic data for traffic conditions and predicted arrival times.&lt;br/&gt;(4) The ability to retain the most recent traffic flow and PT Vehicle arrival time prediction data as the current data for each Bus Lane and its associated road link and send it to the Manage Bus Lane use functionality whenever there is a change.&lt;br/&gt;(5) When a request is received from the Road Network Operator, the ability to create statistical reports from the contents of the store of Bus Lane Data and send it to the Operator Interface function for output.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent != null ? parent.toggleItem('Requirements') : toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
-			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 		<div class="ItemBody" id="AssociationsToTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA1533.htm">«FRAME_Functional_Area» F9. Provide Support for Cooperative Systems</a><br />
+						FRAME_Functional_Area «componentof» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12090" onclick="parent.toggleDiv('detailsDIVLink12090','DetailsImageLink12090')" />Details:
+							<div id="detailsDIVLink12090" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -181,8 +149,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12102" /></button>Details:
-							<div id="detailsDIVLink12102" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12091" onclick="parent.toggleDiv('detailsDIVLink12091','DetailsImageLink12091')" />Details:
+							<div id="detailsDIVLink12091" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -204,54 +172,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12103" /></button>Details:
-							<div id="detailsDIVLink12103" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA1533.htm">«FRAME_Functional_Area» F9. Provide Support for Cooperative Systems</a><br />
-						FRAME_Functional_Area «componentof» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12104" /></button>Details:
-							<div id="detailsDIVLink12104" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3370.htm">«FRAME_Low_Level_Data_Flow» pscs_requested_bus_lane_data</a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12105" /></button>Details:
-							<div id="detailsDIVLink12105" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12092" onclick="parent.toggleDiv('detailsDIVLink12092','DetailsImageLink12092')" />Details:
+							<div id="detailsDIVLink12092" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -273,8 +195,31 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12106" /></button>Details:
-							<div id="detailsDIVLink12106" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12093" onclick="parent.toggleDiv('detailsDIVLink12093','DetailsImageLink12093')" />Details:
+							<div id="detailsDIVLink12093" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3370.htm">«FRAME_Low_Level_Data_Flow» pscs_requested_bus_lane_data</a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12094" onclick="parent.toggleDiv('detailsDIVLink12094','DetailsImageLink12094')" />Details:
+							<div id="detailsDIVLink12094" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -284,7 +229,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="AssociationsFromTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -292,8 +237,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3361.htm">«FRAME_Low_Level_Data_Flow» pscs_read_bus_lane_data</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
+						<a href="../../../EA1/EA415.htm">«FRAME_User_Need» 7.5.3.5</a><br />
+						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -306,146 +251,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12107" /></button>Details:
-							<div id="detailsDIVLink12107" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3378.htm">«FRAME_Low_Level_Data_Flow» pscs_update_road_data_for_bus_lanes</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12108" /></button>Details:
-							<div id="detailsDIVLink12108" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3332.htm">«FRAME_Low_Level_Data_Flow» pscs_bus_lane_use_licence_details</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12109" /></button>Details:
-							<div id="detailsDIVLink12109" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2796.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_urban_road_network_data </a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12110" /></button>Details:
-							<div id="detailsDIVLink12110" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2788.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_current_inter-urban_traffic_conditions </a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12111" /></button>Details:
-							<div id="detailsDIVLink12111" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2789.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_current_urban_traffic_conditions </a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12112" /></button>Details:
-							<div id="detailsDIVLink12112" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2793.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_inter-urban_road_network_data</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12113" /></button>Details:
-							<div id="detailsDIVLink12113" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12095" onclick="parent.toggleDiv('detailsDIVLink12095','DetailsImageLink12095')" />Details:
+							<div id="detailsDIVLink12095" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -467,8 +274,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12114" /></button>Details:
-							<div id="detailsDIVLink12114" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12096" onclick="parent.toggleDiv('detailsDIVLink12096','DetailsImageLink12096')" />Details:
+							<div id="detailsDIVLink12096" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -476,8 +283,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA462.htm">«FRAME_User_Need» 7.5.3.2</a><br />
-						FRAME_User_Need «Servedby» 
+						<a href="../../EA3/EA2/EA3378.htm">«FRAME_Low_Level_Data_Flow» pscs_update_road_data_for_bus_lanes</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -490,8 +297,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12115" /></button>Details:
-							<div id="detailsDIVLink12115" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12097" onclick="parent.toggleDiv('detailsDIVLink12097','DetailsImageLink12097')" />Details:
+							<div id="detailsDIVLink12097" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -513,8 +320,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12116" /></button>Details:
-							<div id="detailsDIVLink12116" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12098" onclick="parent.toggleDiv('detailsDIVLink12098','DetailsImageLink12098')" />Details:
+							<div id="detailsDIVLink12098" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -522,7 +329,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3329.htm">«FRAME_Low_Level_Data_Flow» pscs_bus_lane_data_request</a><br />
+						<a href="../../EA3/EA2/EA2789.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_current_urban_traffic_conditions </a><br />
 						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -536,8 +343,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12117" /></button>Details:
-							<div id="detailsDIVLink12117" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12099" onclick="parent.toggleDiv('detailsDIVLink12099','DetailsImageLink12099')" />Details:
+							<div id="detailsDIVLink12099" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -545,7 +352,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA465.htm">«FRAME_User_Need» 7.5.3.5</a><br />
+						<a href="../../EA3/EA2/EA2793.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_inter-urban_road_network_data</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12100" onclick="parent.toggleDiv('detailsDIVLink12100','DetailsImageLink12100')" />Details:
+							<div id="detailsDIVLink12100" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA412.htm">«FRAME_User_Need» 7.5.3.2</a><br />
 						FRAME_User_Need «Servedby» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -559,8 +389,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12118" /></button>Details:
-							<div id="detailsDIVLink12118" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12101" onclick="parent.toggleDiv('detailsDIVLink12101','DetailsImageLink12101')" />Details:
+							<div id="detailsDIVLink12101" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -568,8 +398,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../../EA1/EA461.htm">«FRAME_User_Need» 7.5.3.11</a><br />
-						FRAME_User_Need «Servedby» 
+						<a href="../../EA3/EA2/EA3361.htm">«FRAME_Low_Level_Data_Flow» pscs_read_bus_lane_data</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -582,8 +412,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12119" /></button>Details:
-							<div id="detailsDIVLink12119" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12102" onclick="parent.toggleDiv('detailsDIVLink12102','DetailsImageLink12102')" />Details:
+							<div id="detailsDIVLink12102" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -605,8 +435,123 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12120" /></button>Details:
-							<div id="detailsDIVLink12120" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12103" onclick="parent.toggleDiv('detailsDIVLink12103','DetailsImageLink12103')" />Details:
+							<div id="detailsDIVLink12103" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3329.htm">«FRAME_Low_Level_Data_Flow» pscs_bus_lane_data_request</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12104" onclick="parent.toggleDiv('detailsDIVLink12104','DetailsImageLink12104')" />Details:
+							<div id="detailsDIVLink12104" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA2796.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_urban_road_network_data </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12105" onclick="parent.toggleDiv('detailsDIVLink12105','DetailsImageLink12105')" />Details:
+							<div id="detailsDIVLink12105" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA2788.htm">«FRAME_Low_Level_Data_Flow» mt.pscs_current_inter-urban_traffic_conditions </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12106" onclick="parent.toggleDiv('detailsDIVLink12106','DetailsImageLink12106')" />Details:
+							<div id="detailsDIVLink12106" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3332.htm">«FRAME_Low_Level_Data_Flow» pscs_bus_lane_use_licence_details</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12107" onclick="parent.toggleDiv('detailsDIVLink12107','DetailsImageLink12107')" />Details:
+							<div id="detailsDIVLink12107" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA411.htm">«FRAME_User_Need» 7.5.3.11</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12108" onclick="parent.toggleDiv('detailsDIVLink12108','DetailsImageLink12108')" />Details:
+							<div id="detailsDIVLink12108" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -628,8 +573,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12121" /></button>Details:
-							<div id="detailsDIVLink12121" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink12109" onclick="parent.toggleDiv('detailsDIVLink12109','DetailsImageLink12109')" />Details:
+							<div id="detailsDIVLink12109" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -639,7 +584,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="RequirementsTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="60%" class="TableHeading">Requirement</td>
 					<td width="10%" class="TableHeading">Type</td>
@@ -658,8 +603,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="6">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement12122" /></button>Details:
-							<div id="detailsDIVRequirement12122" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement12110" onclick="parent.toggleDiv('detailsDIVRequirement12110','DetailsImageRequirement12110')" />Details:
+							<div id="detailsDIVRequirement12110" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">(a) continually collect, fuse and store data provided by the input data flows from the Manage Traffic and Manage Public Transport functionality in the store of Bus Lane Data;&lt;br/&gt;(b) when a request for data about particular bus lanes is received from the Manage use of Bus Lanes function, collect it from the store and return it using the requested bus lane data flow;&lt;br/&gt;(c) when details of a new or updated bus lane licence are received from the Manage use of Bus Lanes function, load them into the store of Bus Lane Data;&lt;br/&gt;(d) when the data flow is received containing new data from the Operator, update the relevant part of the store of Bus Lane Data;&lt;br/&gt;(e) when the data flow is received from the Operator, requesting data from the store of Bus Lane Data, retrieve the requested data and send it to the Operator interface function;&lt;br/&gt;(f) when the data flow containing details of an incorrect (illegal) use of a bus lane is received, load that data in the store of Bus Lane Data to provide a record.&lt;br/&gt;</div>
 
 							</div>
@@ -670,7 +615,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>
 					<td width="70%" class="TableHeading">Value</td>
@@ -688,13 +633,7 @@
 
 			</table>
 		</div>	</div>
- </div>
- </td>
-				</tr>
-			</tbody>
-		</table>
-		
-</div>
+<div class="pageFooter"></div>
+ 
 </body>
 </html>
-

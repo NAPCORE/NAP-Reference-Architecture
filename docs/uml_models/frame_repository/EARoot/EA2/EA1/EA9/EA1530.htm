@@ -4,146 +4,83 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>DFD F9.5 Manage Use of Loading or Unloading Zones</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-
-  function switchProjectProperties() {
-			if (document.getElementById("proj00").style.display == "none") {
-				document.getElementById("proj00").style.display = "revert";
-				document.getElementById("proj01").style.display = "revert";
-				document.getElementById("proj02").style.display = "revert";
-				document.getElementById("proj03").style.display = "revert";
-				document.getElementById("proj04").style.display = "revert";
-				document.getElementById("proj05").style.display = "revert";
-			} else {
-				document.getElementById("proj00").style.display = "none";
-				document.getElementById("proj01").style.display = "none";
-				document.getElementById("proj02").style.display = "none";
-				document.getElementById("proj03").style.display = "none";
-				document.getElementById("proj04").style.display = "none";
-				document.getElementById("proj05").style.display = "none";
-			}
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
 }
 
-		function switchAdvancedProperties(){
-
-			if (document.getElementById("adv00").style.display == "none") {;
-				document.getElementById("adv00").style.display = "revert";
-				document.getElementById("adv01").style.display = "revert";
-			} else {
-				document.getElementById("adv00").style.display = "none";
-				document.getElementById("adv01").style.display = "none";
-			}
-		}
-		function initPage()
-        {			
-			var divs = document.getElementsByClassName("ObjectDetailsNotes");
-			for (var j = 0; j < divs.length; j++) {
-				var tmpStr = divs[j].innerHTML;
-				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
-				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
-
-				tmpStr = tmpStr.replace(/&gt;/g, ">");
-				tmpStr = tmpStr.replace(/&lt;/g, "<");
-
-				divs[j].innerHTML = tmpStr;
-			}
-
-            if (document.getElementById('TableGroup') != null)
-            {
-                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
-            }
-
-        }
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
 </script>
-<style>
-
-</style>
 </head>
-<body onload="initPage();">
-<div class="section group" >
-
-		<div class="col span_2_of_2 header_frame">
-			<h1> DFD F9.5 Manage Use of Loading or Unloading Zones </h1>
-			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
-			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
-		</div>
-		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../../../EA3.htm">Frame Repository</a> / <a href="../../EA976.htm">Frame Functional View</a> / <a href="../EA985.htm">Functionality</a> / <a href="EA1532.htm">Functional Area F9 - Provide Support for Co-operative Systems</a> / <a href="EA1533.htm">F9. Provide Support for Cooperative Systems</a> / <a href="EA1559.htm">F9.5 Manage Urban Un/Loading Zones</a> / <a href="EA1530.htm">DFD F9.5 Manage Use of Loading or Unloading Zones</a></p>
-		</div>
-			
-		<table class="contentmaintable">
-			<!-- <tfoot>
-				<tr>
-					<td>foot1</td>
-					<td>foot2</td>
-				</tr>
-			</tfoot> -->
-			<tbody>
-				<tr>
-					<td class="indexcell">
-						<div class="projectBrowserTitle">Project: </div>
-						<ul>
-<li><img src="../../../../images/175.png" alt="Diagram"/> <a href="EA1530.htm">DFD F9.5 Manage Use of Loading or Unloading Zones</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1542.htm">F9.5.2 Provide Loading/Unloading Zone Operator Interface</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1543.htm">F9.5.3 Manage Store of Loading or Unloading Zone Use</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1544.htm">F9.5.4 Detect Vehicle Using Loading or Unloading Zone</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1545.htm">F9.5.5 Detect Vehicle Using Holding Zone</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1546.htm">F9.5.6 Loading or Unloading Zone Booking Management</a></li>
-<li><img src="../../../../images/21.png" alt="Activity"/> <a href="EA1547.htm">F9.5.7 Provide Un/loading Zone Freight Transport Operations Manager Interface</a></li>
-</ul>
-
-					</td>
-					<td class="contentcell"><div class="PageBody">
-	<div class="diagram_image"> 
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
 <img src="EA1531.png" usemap="#EA1531" border="0" />
 
 <MAP NAME="EA1531">
-<area shape="rect" coords="480,630,498,645" href="../../EA3/EA2/EA3353.htm" target="_self">
-<area shape="rect" coords="357,324,375,339" href="../../EA3/EA2/EA3497.htm" target="_self">
-<area shape="rect" coords="438,677,456,692" href="../../EA3/EA2/EA3339.htm" target="_self">
-<area shape="rect" coords="357,255,375,270" href="../../EA3/EA2/EA3498.htm" target="_self">
-<area shape="rect" coords="746,966,764,981" href="../../EA3/EA2/EA2410.htm" target="_self">
-<area shape="rect" coords="1364,765,1382,780" href="../../EA3/EA2/EA3375.htm" target="_self">
-<area shape="rect" coords="1445,861,1463,876" href="../../EA3/EA2/EA3960.htm" target="_self">
-<area shape="rect" coords="1256,861,1274,876" href="../../EA3/EA2/EA2158.htm" target="_self">
-<area shape="rect" coords="357,393,375,408" href="../../EA3/EA2/EA3495.htm" target="_self">
-<area shape="rect" coords="1445,678,1463,693" href="../../EA3/EA2/EA4068.htm" target="_self">
-<area shape="rect" coords="561,444,579,459" href="../../EA3/EA2/EA3322.htm" target="_self">
-<area shape="rect" coords="561,480,579,495" href="../../EA3/EA2/EA3320.htm" target="_self">
-<area shape="rect" coords="354,794,372,809" href="../../EA3/EA2/EA2440.htm" target="_self">
-<area shape="rect" coords="561,516,579,531" href="../../EA3/EA2/EA3321.htm" target="_self">
-<area shape="rect" coords="561,408,579,423" href="../../EA3/EA2/EA3323.htm" target="_self">
-<area shape="rect" coords="410,237,516,597" href="EA1546.htm" target="_self">
-<area shape="rect" coords="1049,15,1157,173" href="EA1543.htm" target="_self">
-<area shape="rect" coords="1304,579,1410,707" href="EA1542.htm" target="_self">
-<area shape="rect" coords="401,758,498,878" href="EA1544.htm" target="_self">
-<area shape="rect" coords="1305,819,1410,983" href="EA1547.htm" target="_self">
-<area shape="rect" coords="789,899,881,1004" href="EA1545.htm" target="_self">
-<area shape="rect" coords="1322,518,1340,533" href="../../EA3/EA2/EA3355.htm" target="_self">
-<area shape="rect" coords="357,290,375,305" href="../../EA3/EA2/EA3500.htm" target="_self">
-<area shape="rect" coords="561,372,579,387" href="../../EA3/EA2/EA3324.htm" target="_self">
-<area shape="rect" coords="503,144,521,159" href="../../EA3/EA2/EA3373.htm" target="_self">
-<area shape="rect" coords="1191,78,1209,93" href="../../EA3/EA2/EA3363.htm" target="_self">
-<area shape="rect" coords="1256,597,1274,612" href="../../EA3/EA2/EA2325.htm" target="_self">
-<area shape="rect" coords="1385,518,1403,533" href="../../EA3/EA2/EA3372.htm" target="_self">
-<area shape="rect" coords="1119,212,1137,227" href="../../EA3/EA2/EA3368.htm" target="_self">
-<area shape="rect" coords="1343,476,1361,491" href="../../EA3/EA2/EA3376.htm" target="_self">
-<area shape="rect" coords="1256,677,1274,692" href="../../EA3/EA2/EA2326.htm" target="_self">
-<area shape="rect" coords="357,359,375,374" href="../../EA3/EA2/EA3499.htm" target="_self">
-<area shape="rect" coords="1380,36,1398,51" href="../../EA3/EA2/EA3359.htm" target="_self">
-<area shape="rect" coords="357,435,375,450" href="../../EA3/EA2/EA3340.htm" target="_self">
-<area shape="rect" coords="1073,212,1091,227" href="../../EA3/EA2/EA3380.htm" target="_self">
-<area shape="rect" coords="561,324,579,339" href="../../EA3/EA2/EA3377.htm" target="_self">
-<area shape="rect" coords="1445,597,1463,612" href="../../EA3/EA2/EA4069.htm" target="_self">
-<area shape="rect" coords="987,72,1005,87" href="../../EA3/EA2/EA3369.htm" target="_self">
-<area shape="rect" coords="1445,636,1463,651" href="../../EA3/EA2/EA4067.htm" target="_self">
-<area shape="rect" coords="746,918,764,933" href="../../EA3/EA2/EA2438.htm" target="_self">
-<area shape="rect" coords="354,840,372,855" href="../../EA3/EA2/EA2412.htm" target="_self">
-<area shape="rect" coords="1428,17,1541,114" href="../../EA5/EA4343.htm" target="_self">
-<area shape="rect" coords="1256,636,1274,651" href="../../EA3/EA2/EA2327.htm" target="_self">
+<area shape="rect" coords="320,420,332,430" href="../../EA3/EA2/EA3353.htm" target="_self">
+<area shape="rect" coords="238,216,250,226" href="../../EA3/EA2/EA3497.htm" target="_self">
+<area shape="rect" coords="292,451,304,461" href="../../EA3/EA2/EA3339.htm" target="_self">
+<area shape="rect" coords="238,170,250,180" href="../../EA3/EA2/EA3498.htm" target="_self">
+<area shape="rect" coords="497,644,509,654" href="../../EA3/EA2/EA2410.htm" target="_self">
+<area shape="rect" coords="909,510,921,520" href="../../EA3/EA2/EA3375.htm" target="_self">
+<area shape="rect" coords="963,574,975,584" href="../../EA3/EA2/EA3960.htm" target="_self">
+<area shape="rect" coords="837,574,849,584" href="../../EA3/EA2/EA2158.htm" target="_self">
+<area shape="rect" coords="238,262,250,272" href="../../EA3/EA2/EA3495.htm" target="_self">
+<area shape="rect" coords="963,452,975,462" href="../../EA3/EA2/EA4068.htm" target="_self">
+<area shape="rect" coords="374,296,386,306" href="../../EA3/EA2/EA3322.htm" target="_self">
+<area shape="rect" coords="374,320,386,330" href="../../EA3/EA2/EA3320.htm" target="_self">
+<area shape="rect" coords="236,529,248,539" href="../../EA3/EA2/EA2440.htm" target="_self">
+<area shape="rect" coords="374,344,386,354" href="../../EA3/EA2/EA3321.htm" target="_self">
+<area shape="rect" coords="374,272,386,282" href="../../EA3/EA2/EA3323.htm" target="_self">
+<area shape="rect" coords="273,158,344,398" href="EA1546.htm" target="_self">
+<area shape="rect" coords="699,10,771,115" href="EA1543.htm" target="_self">
+<area shape="rect" coords="869,386,940,471" href="EA1542.htm" target="_self">
+<area shape="rect" coords="267,505,332,585" href="EA1544.htm" target="_self">
+<area shape="rect" coords="870,546,940,655" href="EA1547.htm" target="_self">
+<area shape="rect" coords="526,599,587,669" href="EA1545.htm" target="_self">
+<area shape="rect" coords="881,345,893,355" href="../../EA3/EA2/EA3355.htm" target="_self">
+<area shape="rect" coords="238,193,250,203" href="../../EA3/EA2/EA3500.htm" target="_self">
+<area shape="rect" coords="374,248,386,258" href="../../EA3/EA2/EA3324.htm" target="_self">
+<area shape="rect" coords="335,96,347,106" href="../../EA3/EA2/EA3373.htm" target="_self">
+<area shape="rect" coords="794,52,806,62" href="../../EA3/EA2/EA3363.htm" target="_self">
+<area shape="rect" coords="837,398,849,408" href="../../EA3/EA2/EA2325.htm" target="_self">
+<area shape="rect" coords="923,345,935,355" href="../../EA3/EA2/EA3372.htm" target="_self">
+<area shape="rect" coords="746,141,758,151" href="../../EA3/EA2/EA3368.htm" target="_self">
+<area shape="rect" coords="895,317,907,327" href="../../EA3/EA2/EA3376.htm" target="_self">
+<area shape="rect" coords="837,451,849,461" href="../../EA3/EA2/EA2326.htm" target="_self">
+<area shape="rect" coords="238,239,250,249" href="../../EA3/EA2/EA3499.htm" target="_self">
+<area shape="rect" coords="920,24,932,34" href="../../EA3/EA2/EA3359.htm" target="_self">
+<area shape="rect" coords="238,290,250,300" href="../../EA3/EA2/EA3340.htm" target="_self">
+<area shape="rect" coords="715,141,727,151" href="../../EA3/EA2/EA3380.htm" target="_self">
+<area shape="rect" coords="374,216,386,226" href="../../EA3/EA2/EA3377.htm" target="_self">
+<area shape="rect" coords="963,398,975,408" href="../../EA3/EA2/EA4069.htm" target="_self">
+<area shape="rect" coords="658,48,670,58" href="../../EA3/EA2/EA3369.htm" target="_self">
+<area shape="rect" coords="963,424,975,434" href="../../EA3/EA2/EA4067.htm" target="_self">
+<area shape="rect" coords="497,612,509,622" href="../../EA3/EA2/EA2438.htm" target="_self">
+<area shape="rect" coords="236,560,248,570" href="../../EA3/EA2/EA2412.htm" target="_self">
+<area shape="rect" coords="952,11,1027,76" href="../../EA5/EA4343.htm" target="_self">
+<area shape="rect" coords="837,424,849,434" href="../../EA3/EA2/EA2327.htm" target="_self">
 </MAP>
- </div>
+
 	<div class="ObjectTitle">DFD F9.5 Manage Use of Loading or Unloading Zones : Logical diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
@@ -155,7 +92,7 @@
 			<td width="85%" class="ObjectDetailsValue">21.12.2021 11:11:40</td>
 		</tr>
 		<tr style="padding-top: 10px;">
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
 			<td width="85%" class="ObjectDetailsValue"></td>			
 		</tr>
 		<tr id="proj00" style="display: none;">
@@ -167,7 +104,7 @@
 			<td width="85%" class="ObjectDetailsValue">5.0</td>
 		</tr>
 		<tr>
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td width="85%" class="ObjectDetailsValue"></td>			
 		</tr>
 		<tr id="adv00" style="display: none;">
@@ -177,13 +114,6 @@
 	</table>
 	
 </div>
-
- </td>
-				</tr>
-			</tbody>
-		</table>
-		
-</div>
+ 
 </body>
 </html>
-

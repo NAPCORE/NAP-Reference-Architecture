@@ -1,6 +1,6 @@
 ---
 model_name: NAP Reference Architecture
-version: 0.7.1
+version: 5.5.1rev20250210
 target_url: ../uml_models/nap_architecture/index.htm
 ---
 
@@ -16,7 +16,7 @@ The NAP reference architecture is created for two basic NAP types Metadata direc
 
 ## ChangeLog
 
-### Version 5.1.1 - 20250210 
+### Version 5.1.1rev20250210 
 
 - see the [changelog file](uml_models/changelog.docx)
 

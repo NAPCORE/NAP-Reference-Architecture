@@ -4,117 +4,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>NAP Content Provider</title>
 <link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="../../../../js/displayToc.js" type="text/javascript"></script>
 <script>
-
-  function switchProjectProperties() {
-			if (document.getElementById("proj00").style.display == "none") {
-				document.getElementById("proj00").style.display = "revert";
-				document.getElementById("proj01").style.display = "revert";
-				document.getElementById("proj02").style.display = "revert";
-				document.getElementById("proj03").style.display = "revert";
-				document.getElementById("proj04").style.display = "revert";
-				document.getElementById("proj05").style.display = "revert";
-			} else {
-				document.getElementById("proj00").style.display = "none";
-				document.getElementById("proj01").style.display = "none";
-				document.getElementById("proj02").style.display = "none";
-				document.getElementById("proj03").style.display = "none";
-				document.getElementById("proj04").style.display = "none";
-				document.getElementById("proj05").style.display = "none";
-			}
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
 }
 
-		function switchAdvancedProperties(){
-
-			if (document.getElementById("adv00").style.display == "none") {;
-				document.getElementById("adv00").style.display = "revert";
-				document.getElementById("adv01").style.display = "revert";
-			} else {
-				document.getElementById("adv00").style.display = "none";
-				document.getElementById("adv01").style.display = "none";
-			}
-		}
-		function initPage()
-        {			
-			var divs = document.getElementsByClassName("ObjectDetailsNotes");
-			for (var j = 0; j < divs.length; j++) {
-				var tmpStr = divs[j].innerHTML;
-				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
-				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
-
-				tmpStr = tmpStr.replace(/&gt;/g, ">");
-				tmpStr = tmpStr.replace(/&lt;/g, "<");
-
-				divs[j].innerHTML = tmpStr;
-			}
-
-            if (document.getElementById('TableGroup') != null)
-            {
-                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
-            }
-
-        }
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
 </script>
-<style>
-
-</style>
 </head>
-<body onload="initPage();">
-<div class="section group" >
-
-		<div class="col span_2_of_2 header_frame">
-			<h1> NAP Content Provider </h1>
-			<!-- <img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />-->
-			<img class="header_image" src="../../../../images/ea-banner.png" align="right" alt="Header Image" />
-		</div>
-		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../../../EA3.htm">Frame Repository</a> / <a href="../../EA976.htm">Frame Functional View</a> / <a href="../EA4167.htm">Terminators & Terminator Diagrams</a> / <a href="EA4195.htm">Terminators</a> / <a href="EA4207.htm">NAP Actors</a> / <a href="EA4284.htm">NAP Content Provider</a></p>
-		</div>
-			
-		<table class="contentmaintable">
-			<!-- <tfoot>
-				<tr>
-					<td>foot1</td>
-					<td>foot2</td>
-				</tr>
-			</tfoot> -->
-			<tbody>
-				<tr>
-					<td class="indexcell">
-						<div class="projectBrowserTitle">Project: </div>
-						<ul>
-<a href="EA4207.htm">NAP Actors</a></ul>
-
-					</td>
-					<td class="contentcell"><div class="pageHeader"></div>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">NAP Content Provider  : Public  &lt;&lt;FRAME_Terminator&gt;&gt; FRAME_Terminator</span>
-	<table border="0" class="ObjectDetails">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("NAP Content Provider", " : "))</script>  : Public  &lt;&lt;FRAME_Terminator&gt;&gt; FRAME_Terminator</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
 			<td width="85%" class="ObjectDetailsValue">30.07.2021 20:12:09</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">03.01.2024 18:10:34</td>
+			<td class="ObjectDetailsValue">29.09.2024 1:10:51</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue">Richard</td>
+			<td class="ObjectDetailsValue">bures</td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td class="ObjectDetailsValue">5.1</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj02" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
-			<td class="ObjectDetailsValue">1.0</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj03" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
@@ -133,11 +78,11 @@
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj05" style="display: none;">
-			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
@@ -149,17 +94,17 @@
 			<td class="ObjectDetailsValue"><a href="../EA1/EA4182.htm">NAP Actors</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">This Generic Terminator Role Content Provider shall represent any provider of traffic, travel data. &lt;br/&gt;The Content Provider describes this data with metadata on the NAP (to be stored in D3.15 NAP Metadata). The Content Provider must be registered in the NAP, the NAP Content Provider electronic identity, proof of real-world identity and authorization credentials are kept in D3.17 NAP Users. The Content Provider information is encompassing one or more user accounts and machine accounts, (for Data Platform NAP type), licence agreements and other relevant data based on the provider complexity. The Content Provider is always linked with at least one user account that also stands for the organization.&lt;br/&gt;In case of Data Platform NAP type the Content Provider also uploads / make data available for retrieval by the NAP.&lt;br/&gt;Content Providers are for example public and private road operators, road authorities, service providers, transport authorities, transport operators, infrastructure managers, transport on-demand service providers. &lt;br/&gt;Obligations to make data content accessible via the NAP is stipulated in the ITS Directive 2010/40/EU and its revised version (EU) 2023/2661 and complementary Delegated Regulations 885/2013, 886/2013, 2015/962, 2017/1926, 2022/670 and 2023/1804,&lt;br/&gt;&lt;b&gt;Key issue&lt;/b&gt;: Provide and publish content (to which he has the legal rights to publish); collect content. &lt;br/&gt;&lt;b&gt;Area of responsibility&lt;/b&gt;: Provide timely and accurate traffic and travel data.&lt;br/&gt;&lt;b&gt;Tasks&lt;/b&gt;: Provide content relevant to the ITS domain and according to contracts with the NAP and content consumers. provide information for issuing electronic identity, proving of real-world identity, issuing authentication credentials to prove themselves as trusted and registered NAP Content provider.&lt;br/&gt;&lt;b&gt;Mnemonic&lt;/b&gt;: nap.cp&lt;br/&gt;&lt;br/&gt;===========&lt;br/&gt;&lt;b&gt;CHANGELOG:&lt;/b&gt;&lt;br/&gt;- added information about the user and machine account as being part of the CP&lt;br/&gt;- added information about the organization account and user account.&lt;br/&gt;- added information about possibility to upload data to NAP&lt;br/&gt;- added task description.&lt;br/&gt;&lt;b&gt;TODO:&lt;/b&gt;&lt;br/&gt;- check data flows so they contain the correct information&lt;br/&gt;- add information about new delegated regulations, possibly directly into the CP description.&lt;br/&gt;&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">The generic terminator role of the NAP Content Provider represents any provider of traffic and transport data.&lt;br/&gt;The NAP Content Provider describes traffic and transport data with meta-data on the NAP (to be stored in D3.15 NAP Meta-Data). Information about the Content Provider, such as contact details, shall be kept in D3.17 NAP Content Providers.&lt;br/&gt;Content Providers are public and private road operators, road authorities, service providers, transport authorities, transport operators, infrastructure managers, and transport on-demand service providers. The obligations to make traffic and transport data accessible via the NAP mainly depend on the type of data according to the ITS Directive and its respective delegated regulations (see Content Provider Actor)&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Key issue&lt;/b&gt;: Provide and publish content (which the content provider has the legal rights to publish); collect content &lt;br/&gt;&lt;b&gt;Area of responsibility&lt;/b&gt;: Provide timely and accurate traffic and transport data&lt;br/&gt;&lt;b&gt;Tasks&lt;/b&gt;: Provide content relevant to the ITS domain and according to contracts with the NAP and content consumers&lt;br/&gt;&lt;b&gt;Mnemonic&lt;/b&gt;: nap.cp&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
-			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-			<li onClick="parent != null ? parent.toggleItem('Links') : toggleItem('Links');" id="LinksTitle">Other Links</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 		<div class="ItemBody" id="AssociationsToTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -181,31 +126,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24875" /></button>Details:
-							<div id="detailsDIVLink24875" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2236.htm">«FRAME_Low_Level_Data_Flow» fnap.cp-support_request</a><br />
-						FRAME_Low_Level_Data_Flow «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24876" /></button>Details:
-							<div id="detailsDIVLink24876" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24831" onclick="parent.toggleDiv('detailsDIVLink24831','DetailsImageLink24831')" />Details:
+							<div id="detailsDIVLink24831" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -227,8 +149,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24877" /></button>Details:
-							<div id="detailsDIVLink24877" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24832" onclick="parent.toggleDiv('detailsDIVLink24832','DetailsImageLink24832')" />Details:
+							<div id="detailsDIVLink24832" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -236,30 +158,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						«FRAME_Low_Level_Data_Flow» fnap.cp-data_&_authorisation_credentials<br />
-						Interface «IN» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24878" /></button>Details:
-							<div id="detailsDIVLink24878" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA2235.htm">«FRAME_Low_Level_Data_Flow» fnap.cp-registration_request</a><br />
+						<a href="../../EA3/EA2/EA2236.htm">«FRAME_Low_Level_Data_Flow» fnap.cp-support_request</a><br />
 						FRAME_Low_Level_Data_Flow «IN» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -273,8 +172,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24879" /></button>Details:
-							<div id="detailsDIVLink24879" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24833" onclick="parent.toggleDiv('detailsDIVLink24833','DetailsImageLink24833')" />Details:
+							<div id="detailsDIVLink24833" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -284,7 +183,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="AssociationsFromTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
@@ -292,7 +191,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3992.htm">«FRAME_Low_Level_Data_Flow» tnap.cp-registration_response</a><br />
+						<a href="../../EA3/EA2/EA3994.htm">«FRAME_Low_Level_Data_Flow» tnap.cp-support_response</a><br />
 						FRAME_Low_Level_Data_Flow «OUT» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -306,31 +205,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24880" /></button>Details:
-							<div id="detailsDIVLink24880" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						«FRAME_Low_Level_Data_Flow» tnap.cp-data_upload_result_report<br />
-						Interface «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24881" /></button>Details:
-							<div id="detailsDIVLink24881" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24834" onclick="parent.toggleDiv('detailsDIVLink24834','DetailsImageLink24834')" />Details:
+							<div id="detailsDIVLink24834" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -352,31 +228,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24882" /></button>Details:
-							<div id="detailsDIVLink24882" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../../EA3/EA2/EA3994.htm">«FRAME_Low_Level_Data_Flow» tnap.cp-support_response</a><br />
-						FRAME_Low_Level_Data_Flow «OUT» 
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24883" /></button>Details:
-							<div id="detailsDIVLink24883" class="DetailsDiv" >
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink24835" onclick="parent.toggleDiv('detailsDIVLink24835','DetailsImageLink24835')" />Details:
+							<div id="detailsDIVLink24835" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -386,7 +239,7 @@
 			</table>
 		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
-			<table class="Table ea_table">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>
 					<td width="70%" class="TableHeading">Value</td>
@@ -409,27 +262,13 @@
 
 			</table>
 		</div>		<div class="ItemBody" id="LinksTable">
-			<table class="Table ea_table">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Object</td>
 					<td width="10%" class="TableHeading">Type</td>
 					<td width="10%" class="TableHeading">Connection</td>
 					<td width="10%" class="TableHeading">Direction</td>
 					<td width="40%" class="TableHeading">Notes</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top">NAP Content Provider</td>
-					<td width="10%" class="TableRow" valign="top">Actor</td>
-					<td width="10%" class="TableRow" valign="top">Abstraction</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top">Metadata provision contract (NO to CP)</td>
-					<td width="10%" class="TableRow" valign="top">Collaborate</td>
-					<td width="10%" class="TableRow" valign="top">Dependency</td>
-					<td width="10%" class="TableRow" valign="top">To</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="30%" class="TableRow" valign="top"><a href="EA4232.htm">«FRAME_Terminator» Parking Operator</a></td>
@@ -442,13 +281,7 @@
 			</table>
 		</div>
 	</div>
- </div>
- </td>
-				</tr>
-			</tbody>
-		</table>
-		
-</div>
+<div class="pageFooter"></div>
+ 
 </body>
 </html>
-
