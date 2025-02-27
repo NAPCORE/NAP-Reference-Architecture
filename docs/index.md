@@ -1,12 +1,14 @@
-This site presents [National Access Point (NAP) Reference Architecture](uml/nap_architecture.md), based on the [European ITS Framework Architecture (FRAME) methodology](frame.md).
+# NAPCORE Reference Architectures
 
-NRA aims to harmonize NAP activities at the European level and increase their effectiveness. It defines roles, functions, and processes for NAP users and data registration and data/metadata retrieval. It also outlines the minimum functionality for the two basic NAP types at the national level (Metadata directory and Data Platform).
+This site presents National Access Point (NAP) and National Body Reference Architectures based on the European ITS Framework Architecture (FRAME) methodology.
 
-Main content of this site is a browsable UML model of the NAP Reference Architecture. To complement the NRA model we also include FRAME models for the reference. 
+Reference architecture  aims to harmonize  activities at the European level and increase their effectiveness. It defines roles, functions, and processes, physical interactions, interfaces and system requirements.
+
+Main content of this site are browsable UML models of the NAP and NB Reference Architectures. To complement the NRA model we also include FRAME models for the reference. 
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __NAP Reference Architecture__
+-   :material-database-search-outline:{ .lg .middle } __NAP Reference Architecture__
 
     ---
 
@@ -14,6 +16,14 @@ Main content of this site is a browsable UML model of the NAP Reference Architec
 
     [:octicons-arrow-right-24: Explore](uml/nap_architecture.md)
 
+-   :material-database-search-outline:{ .lg .middle } __NAP Reference Architecture__
+
+    ---
+
+    Dive into to model of the NB Reference Architecture
+
+    [:octicons-arrow-right-24: Explore](uml/nb_architecture.md)
+	
 -   :fontawesome-brands-markdown:{ .lg .middle } __FRAME metamodel__
 
     ---
@@ -30,16 +40,13 @@ Main content of this site is a browsable UML model of the NAP Reference Architec
 
     [:octicons-arrow-right-24: Browse](uml/frame_repository.md)
 
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
-
-    ---
-
-    All materials of FRAME and NRA is licensed under MIT and available on [GitHub]
-
-    [:octicons-arrow-right-24: License](https://mit-license.org/)
 
 </div>
 
-## Acknowledgment
+??? quote "Acknowledgment"
 
-The NAP Reference Architecture (NRA) was developed within the project [FRAME-NEXT](https://frame-next.eu/) and was further upgraded according to the NAP operator needs within the project [NAPCORE](https://napcore.eu/). Both Programme support actions (PSA) co-financed by EU from Connection European Facility (CEF) programme.
+	<img src="assets/img/cofinanced-eu-logo.png" alt="Co-financed by European Union" width="50%" height="auto" align="right">
+
+	The development of the NAP and the NB Reference Architectures has received funding from the European Union's Connecting Europe Facility (CEF) programme under grant agreement No [MOVE/B4/SUB/2020-123/SI2.852232]. For more information go to [NAPCORE](https://napcore.eu/) project website.
+
+	The content of this document reflects only the authors' views, and the European Union is not responsible for any use that may be made of the information it contains.

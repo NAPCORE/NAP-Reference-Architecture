@@ -1,7 +1,7 @@
 ---
 model_name: FRAME Meta Model
 version: 5.1.1
-target_url: ../uml_models/frame_metamodel/index.htm
+target_url: ../assets/uml_models/frame_metamodel/index.htm
 ---
 
 FRAME meta model defines objects used by updated FRAME. The meta-model has a different structuring than the final views of the architecture, it structures the FRAME artefacts into five sections. The first four sections develop from a high-level perspective down to more technical details of the service. The last layer contains artefacts, which are relevant for all sections. 
