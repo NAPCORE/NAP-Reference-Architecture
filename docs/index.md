@@ -16,7 +16,7 @@ Main content of this site are browsable UML models of the NAP and NB Reference A
 
     [:octicons-arrow-right-24: Explore](uml/nap_architecture.md)
 
--   :material-database-search-outline:{ .lg .middle } __NAP Reference Architecture__
+-   :material-database-search-outline:{ .lg .middle } __NB Reference Architecture__
 
     ---
 
