@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>F5.11.7 Provide In-vehicle eCall Facilities</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {	
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("F5.11.7 Provide In-vehicle eCall Facilities", " : "))</script>  : Public  &lt;&lt;FRAME_Low_Level_Function&gt;&gt; FRAME_Low_Level_Function</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">24.10.2019 12:44:35</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">08.09.2021 14:46:59</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Update after transfer</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">5.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{4B6AAED4-EE90-4d5f-9C66-1D1D0C9BB919}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA1328.htm">DFD F5.11 Provide Driver Monitoring and eCall</a>, <a href="EA1322.htm">Functional Tree of Area F5 Provide Support for Host Vehicle Services</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">This Function shall be capable of providing the following facilities:&lt;br/&gt;&lt;br/&gt;(1) The ability to provide facilities that enable an eCall message to be automatically sent to the Public Safety Answering Point (PSAP) by the Host Vehicle that has detected that it has been involved in an accident.&lt;br/&gt;(2) The ability to include the following data objects in the eCall message: VIN, current and previous Host Vehicle locations, Host Vehicle position can be trusted, direction in which the Host Vehicle is moving, fuel type, number of occupants, some basic information on the reason for the call, e.g. it is a real call, or a test call&lt;br/&gt;(3) The ability to check the current location of the Host Vehicle based on its own input from the Location Data Source.&lt;br/&gt;(4) The ability to send an eCall message to the PSAP either as a result of input from a Host Vehicle occupant, or automatically by the Driver monitoring system.&lt;br/&gt;(5) The ability for the Driver to cancel the automatic initiation of the eCall message.&lt;br/&gt;(6) The ability to display call acknowledgement messages from the Mobile Network functionality and the PSAP to the Driver and other occupants (if any) in the Host Vehicle.&lt;br/&gt;(7) The ability to re-send the eCall message if the Mobile Network functionality returns a &quot;message failed&quot; indication.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
+			<li onClick="parent.toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3526.htm">«FRAME_Low_Level_Data_Flow» pshvs_eCall_information </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8873" onclick="parent.toggleDiv('detailsDIVLink8873','DetailsImageLink8873')" />Details:
+							<div id="detailsDIVLink8873" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3579.htm">«FRAME_Low_Level_Data_Flow» pshvs_request_driver_condition</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8874" onclick="parent.toggleDiv('detailsDIVLink8874','DetailsImageLink8874')" />Details:
+							<div id="detailsDIVLink8874" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA1384.htm">«FRAME_High_Level_Function» F5.11 Provide Driver Monitoring and eCall</a><br />
+						FRAME_High_Level_Function «componentof» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8875" onclick="parent.toggleDiv('detailsDIVLink8875','DetailsImageLink8875')" />Details:
+							<div id="detailsDIVLink8875" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA4145.htm">«FRAME_Low_Level_Data_Flow» tv.hmi-eCall_response </a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8876" onclick="parent.toggleDiv('detailsDIVLink8876','DetailsImageLink8876')" />Details:
+							<div id="detailsDIVLink8876" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3502.htm">«FRAME_Low_Level_Data_Flow» pshvs.psef_eCall_message</a><br />
+						FRAME_Low_Level_Data_Flow «IN» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8877" onclick="parent.toggleDiv('detailsDIVLink8877','DetailsImageLink8877')" />Details:
+							<div id="detailsDIVLink8877" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3393.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_message_failure</a><br />
+						FRAME_Low_Level_Data_Flow «owned by» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8878" onclick="parent.toggleDiv('detailsDIVLink8878','DetailsImageLink8878')" />Details:
+							<div id="detailsDIVLink8878" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA394.htm">«FRAME_User_Need» 5.3.0.2</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8879" onclick="parent.toggleDiv('detailsDIVLink8879','DetailsImageLink8879')" />Details:
+							<div id="detailsDIVLink8879" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3392.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_first_acknowledgement </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8880" onclick="parent.toggleDiv('detailsDIVLink8880','DetailsImageLink8880')" />Details:
+							<div id="detailsDIVLink8880" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA462.htm">«FRAME_User_Need» 5.3.1.2</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8881" onclick="parent.toggleDiv('detailsDIVLink8881','DetailsImageLink8881')" />Details:
+							<div id="detailsDIVLink8881" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA393.htm">«FRAME_User_Need» 5.3.0.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8882" onclick="parent.toggleDiv('detailsDIVLink8882','DetailsImageLink8882')" />Details:
+							<div id="detailsDIVLink8882" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA396.htm">«FRAME_User_Need» 7.6.1.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8883" onclick="parent.toggleDiv('detailsDIVLink8883','DetailsImageLink8883')" />Details:
+							<div id="detailsDIVLink8883" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA2444.htm">«FRAME_Low_Level_Data_Flow» fv.hmi-initiate_eCall </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8884" onclick="parent.toggleDiv('detailsDIVLink8884','DetailsImageLink8884')" />Details:
+							<div id="detailsDIVLink8884" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA397.htm">«FRAME_User_Need» 7.6.1.2</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8885" onclick="parent.toggleDiv('detailsDIVLink8885','DetailsImageLink8885')" />Details:
+							<div id="detailsDIVLink8885" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA461.htm">«FRAME_User_Need» 5.3.1.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8886" onclick="parent.toggleDiv('detailsDIVLink8886','DetailsImageLink8886')" />Details:
+							<div id="detailsDIVLink8886" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3517.htm">«FRAME_Low_Level_Data_Flow» pshvs_driver_condition </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8887" onclick="parent.toggleDiv('detailsDIVLink8887','DetailsImageLink8887')" />Details:
+							<div id="detailsDIVLink8887" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA2199.htm">«FRAME_Low_Level_Data_Flow» flds-vehicle_position_for_eCall </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8888" onclick="parent.toggleDiv('detailsDIVLink8888','DetailsImageLink8888')" />Details:
+							<div id="detailsDIVLink8888" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA775.htm">«FRAME_User_Need» 5.1.0.6</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8889" onclick="parent.toggleDiv('detailsDIVLink8889','DetailsImageLink8889')" />Details:
+							<div id="detailsDIVLink8889" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3394.htm">«FRAME_Low_Level_Data_Flow» psef.pshvs_eCall_responses</a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8890" onclick="parent.toggleDiv('detailsDIVLink8890','DetailsImageLink8890')" />Details:
+							<div id="detailsDIVLink8890" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA280.htm">«FRAME_User_Need» 8.5.1.4</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8891" onclick="parent.toggleDiv('detailsDIVLink8891','DetailsImageLink8891')" />Details:
+							<div id="detailsDIVLink8891" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA278.htm">«FRAME_User_Need» 8.5.1.2</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8892" onclick="parent.toggleDiv('detailsDIVLink8892','DetailsImageLink8892')" />Details:
+							<div id="detailsDIVLink8892" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3519.htm">«FRAME_Low_Level_Data_Flow» pshvs_driver_failed </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8893" onclick="parent.toggleDiv('detailsDIVLink8893','DetailsImageLink8893')" />Details:
+							<div id="detailsDIVLink8893" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA277.htm">«FRAME_User_Need» 8.5.1.1</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8894" onclick="parent.toggleDiv('detailsDIVLink8894','DetailsImageLink8894')" />Details:
+							<div id="detailsDIVLink8894" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../../EA1/EA279.htm">«FRAME_User_Need» 8.5.1.3</a><br />
+						FRAME_User_Need «Servedby» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8895" onclick="parent.toggleDiv('detailsDIVLink8895','DetailsImageLink8895')" />Details:
+							<div id="detailsDIVLink8895" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../../EA3/EA2/EA3514.htm">«FRAME_Low_Level_Data_Flow» pshvs_data_for_eCall </a><br />
+						FRAME_Low_Level_Data_Flow «OUT» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink8896" onclick="parent.toggleDiv('detailsDIVLink8896','DetailsImageLink8896')" />Details:
+							<div id="detailsDIVLink8896" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="RequirementsTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="60%" class="TableHeading">Requirement</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Status</td>
+					<td width="10%" class="TableHeading">Difficulty</td>
+					<td width="10%" class="TableHeading">Priority</td>
+					<td width="10%" class="TableHeading">Stability</td>
+				</tr>
+				<tr>
+					<td width="60%" class="TableRow">Functional</td>
+					<td width="10%" class="TableRow">Functional</td>
+					<td width="10%" class="TableRow">Proposed</td>
+					<td width="10%" class="TableRow">Medium</td>
+					<td width="10%" class="TableRow">Medium</td>
+					<td width="10%" class="TableRow">Moderate</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="6">
+						<div class="DetailsDivParent"><img src="../../../../images/minus03.gif" align="absmiddle" id="DetailsImageRequirement8897" onclick="parent.toggleDiv('detailsDIVRequirement8897','DetailsImageRequirement8897')" />Details:
+							<div id="detailsDIVRequirement8897" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">(a) when one of the accident detection data flows is received, the information on the reason for the call, and the current location of the vehicle is collected;&lt;br/&gt;(b) a request is made to the Operational Data Store management Function for data objects about the condition of the Driver;&lt;br/&gt;(c) check the location of the Host Vehicle provided in (a) above against the data objects received from the Location Data Source and if similar add a high confidence rating for the position of the Host Vehicle to the data.&lt;br/&gt;(d) check for any &quot;cancellation&quot; input data objects from the Driver&#39;s HMI.&lt;br/&gt;(e) a data flow containing the eCall message is sent to the eCall Management functionality;&lt;br/&gt;(f) a data flow is sent to the Vehicle Systems in the Host Vehicle via the Vehicle Communications functionality;&lt;br/&gt;(g) when the first reply is received from the PSAP, an acknowledgement that the call is being processed is output via the Driver&#39;s HMI in the eCall information data flow;&lt;br/&gt;(h) when the final reply is received from the PSAP, again a response is output via the driver&#39;s HMI in the eCall information data flow&lt;br/&gt;(i) if as a result of (e) a &quot;message failed&quot; response is received from the PSAP, repeat (e).&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isReadOnly:</td>
+				<td width="70%" class="TableRow">false</td>
+			</tr>
+
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
+
+
+			</table>
+		</div>	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>
