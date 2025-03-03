@@ -8,42 +8,12 @@ NAP reference Architecture is an initiative of the [NAPCORE (National Access Poi
 
 - [Releases](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/releases): NAP Reference Architecture releases (1.0.0, etc.); each release having updated high level views and recommendations according to latest understanding.
 - [Working Drafts](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/drafts): Working drafts including revisions to the latest NAP Reference Architecture release.
-- [Website](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/docs): Latest NRA, FRAME repository and FRAME meta-model as a browsable version [website](https://napcore.github.io/NAP-Reference-Architecture/)
 
 ## Working with NAP Reference Architecture models 
 
 The NAP Reference Architecture models are stored as XMI file and as a FRAME toolbox. 
 
 To open the NRA first the toolbox must be loaded into empty EA project and then XMI with the NRA imported to that file. Any other sequence will break the stereotypes.
-
-## Working with website
-
-The website content is stored in /docs folder.
-
-### Local Installation
-
-Using Python 3.12 and pdm:
-
-$ pdm install
-
-Before using the installed mkdocs command, make sure you activate it's virtualenv.
-
-### Local development
-
-Edit files in the docs folder. See https://www.mkdocs.org/user-guide/writing-your-docs/
-
-Run from project root:
-
-$ mkdocs serve
-
-Then open http://localhost:8000
-
-This shall update as soon as you save any content file.
-
-### Deploying on GitHub Pages
-
-Just push the repository to GitHub. It shall build the page on it's own.
-See: https://napcore.github.io/NAP-Reference-Architecture/
 
 ## Acknowledgement
 This Architecture represents the architecture of National Access Point harmonized by [NAPCORE](https://napcore.eu/)
