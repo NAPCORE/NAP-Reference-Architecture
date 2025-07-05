@@ -21,6 +21,17 @@ jobs:
           TAG=${GITHUB_REF#refs/tags/v}
           echo "version=$TAG" >> $GITHUB_OUTPUT
 
+      - name: Rename model file to NRA.qea
+        run: |
+          MODEL_DIR="drafts/next/model"
+          ORIGINAL=$(find "$MODEL_DIR" -type f -name '*.qea' | head -n 1)
+          if [ -n "$ORIGINAL" ] && [ "$(basename "$ORIGINAL")" != "NRA.qea" ]; then
+            mv "$ORIGINAL" "$MODEL_DIR/NRA.qea"
+            echo "Renamed $ORIGINAL to NRA.qea"
+          else
+            echo "Model file already named correctly or not found."
+          fi
+
       - name: Copy draft to release folder
         run: |
           VERSION=${{ steps.version.outputs.version }}
