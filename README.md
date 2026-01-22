@@ -27,21 +27,21 @@ Each release includes:
 Contains **working drafts** preparing future releases.  
 Drafts follow the naming pattern:
 
-'''
+```
 <target-version>-draft.<iteration>
-'''
+```
 
 Example:
 
-'''
+```
 1.1.0-draft.2
-'''
+```
 
 The folder:
 
-'''
+```
 /drafts/latest
-'''
+```
 
 always contains the **most up‑to‑date working draft**, including corrections and improvements that will appear in the next release.
 

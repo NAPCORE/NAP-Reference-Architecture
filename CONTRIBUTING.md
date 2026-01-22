@@ -15,15 +15,15 @@ Contributions should be made against the **next planned release**, not the last 
 
 Drafts are stored in:
 
-'''
+```
 /drafts/<target-version>-draft.<iteration>
-'''
+```
 
 The folder:
 
-'''
+```
 /drafts/latest
-'''
+```
 
 always points to the most current working draft.
 
@@ -45,9 +45,9 @@ Please reference:
 Approved changes are incorporated into the **next draft iteration**:
 
 
-'''
+```
 <target-version>-draft.<iteration+1>
-'''
+```
 
 Drafts may undergo multiple iterations before stabilisation.
 
@@ -55,9 +55,9 @@ Drafts may undergo multiple iterations before stabilisation.
 
 Once a draft is validated and approved by NAPCORE governance, it becomes a new numbered release in:
 
-'''
+```
 /releases/<version>
-'''
+```
 
 Releases are **immutable**.
 

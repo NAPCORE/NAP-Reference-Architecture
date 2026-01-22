@@ -7,21 +7,21 @@ Drafts represent ongoing development and are the primary place where updates, co
 
 Drafts follow the naming pattern:
 
-'''
+```
 <target-version>-draft.<iteration>
-'''
+```
 
 Examples:
 
-'''
+```
 1.1.0-draft.1 1.1.0-draft.2 2.0.0-draft.1
-'''
+```
 
 The folder:
 
-'''
+```
 /drafts/latest
-'''
+```
 
 always contains the **most up‑to‑date working draft**, including corrections to existing releases.
 
@@ -51,9 +51,9 @@ Importing the XMI before loading the toolbox will break stereotypes.
 
 Stable, published versions of the NRA are available in:
 
-'''
+```
 /releases
-'''
+```
 
 Drafts should be considered **pre‑release material** and may change without notice.
 

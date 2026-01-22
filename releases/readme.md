@@ -28,15 +28,15 @@ Releases are **not modified** after publication.
 
 Corrections, improvements, and new features are developed in:
 
-'''
+```
 /drafts
-'''
+```
 
 The next release is prepared through draft iterations such as:
 
-'''
+```
 1.2.0-draft.1 1.2.0-draft.2
-'''
+```
 
 The folder `/drafts/latest` always contains the most current draft.
 
