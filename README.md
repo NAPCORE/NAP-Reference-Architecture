@@ -1,23 +1,66 @@
-# National Access Point Reference Architecture
+Here’s a significantly improved, clearer, more structured, and more professional README you can drop directly into the repository.  
+# National Access Point Reference Architecture (NRA)
 
-The National Access Point Reference Architecture (NRA) is a set of high level views that enable plans to be made for interoperable NAP. It covers technical aspects, plus the related organisational, legal and business issues. It defines a framework and guideline for the implementation of harmonized national access points across Europe. 
+![Version](https://img.shields.io/github/v/tag/NAPCORE/NAP-Reference-Architecture?label=version&style=flat-square)
+![License](https://img.shields.io/github/license/NAPCORE/NAP-Reference-Architecture?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/NAPCORE/NAP-Reference-Architecture?style=flat-square)
+![Open Issues](https://img.shields.io/github/issues/NAPCORE/NAP-Reference-Architecture?style=flat-square)
+![Closed Issues](https://img.shields.io/github/issues-closed/NAPCORE/NAP-Reference-Architecture?style=flat-square)
 
-NAP reference Architecture is an initiative of the [NAPCORE (National Access Point Coordination Organisation for Europe)](https://napcore.eu/), a formed organisation to coordinate and harmonise more than 30 mobility data platforms across Europe. It is based on methodology created by the FRAME (FRamework Architecture Made for Europe) available at [GitHub](https://github.com/FRAME-NEXT/FRAME) with dedicated websites of [FRAME home](https://frame-online.eu/) and of [FRAME-NEXT project](https://frame-next.eu/).
+The **National Access Point Reference Architecture (NRA)** provides a harmonised, high‑level architectural framework for implementing interoperable National Access Points (NAPs) across Europe.  
+It covers not only technical architecture, but also the organisational, legal, and business considerations required for a coherent and sustainable mobility data ecosystem.
 
-## Structure of the repository 
+The NRA supports Member States in aligning their NAP implementations with the objectives of **NAPCORE**—the *National Access Point Coordination Organisation for Europe*—which coordinates and harmonises more than 30 mobility data platforms across Europe.
 
-- [Releases](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/releases): NAP Reference Architecture releases (1.0.0, etc.); each release having updated high level views and recommendations according to latest understanding.
-- [Working Drafts](https://github.com/NAPCORE/NAP-Reference-Architecture/tree/main/drafts): Working drafts including revisions to the latest NAP Reference Architecture release.
+The architecture is based on the **FRAME (FRamework Architecture Made for Europe)** methodology, available at the [FRAME GitHub repository](https://github.com/FRAME-NEXT/FRAME) and documented on the [FRAME Online](https://frame-online.eu/) and [FRAME-NEXT](https://frame-next.eu/) websites.
 
-## Working with NAP Reference Architecture models 
+## 📁 Repository Structure
 
-The NAP Reference Architecture models are stored as XMI file and as a FRAME toolbox. 
+### **Releases**
+`/releases`  
+Contains official NRA releases (e.g., *1.0.0*).  
+Each release includes updated high‑level views, architectural components, and recommendations reflecting the latest shared understanding within NAPCORE.
 
-To open the NRA first the toolbox must be loaded into empty EA project and then XMI with the NRA imported to that file. Any other sequence will break the stereotypes.
+### **Working Drafts**
+`/drafts`  
+Contains ongoing revisions and draft updates that will feed into future NRA releases.  
+These drafts represent work in progress and may evolve before being included in an official release.
 
-## Acknowledgement
-This Architecture represents the architecture of National Access Point harmonized by [NAPCORE](https://napcore.eu/)
+## 🧩 Working with the NRA Models
 
-![NAPCORE](https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png)
+The NRA models are provided in two formats:
 
-![Co founded by EU](https://napcore.eu/wp-content/themes/napcore/images/eu.png)
+- **XMI file** – the model exchange format  
+- **FRAME Toolbox** – the supporting FRAME methodology toolbox
+
+To open and work with the NRA in *Enterprise Architect (EA)*:
+
+1. Create a **new, empty EA project**.  
+2. **Import the FRAME toolbox** into the project.  
+3. **Import the NRA XMI file** into the same project.
+
+> ⚠️ Importing the XMI before loading the toolbox will break stereotypes and model definitions.  
+> Always load the toolbox first.
+
+## 🎯 Purpose and Scope
+
+The NRA provides:
+
+- A **common reference** for Member States implementing or evolving their National Access Points  
+- A **harmonised architectural baseline** supporting interoperability across Europe  
+- A **shared vocabulary and modelling approach** based on FRAME  
+- Guidance that spans:
+  - Technical architecture  
+  - Organisational roles and responsibilities  
+  - Legal and governance considerations  
+  - Business processes and data flows  
+
+It is intended for policymakers, NAP operators, architects, and technical teams working on mobility data exchange.
+
+## 🤝 Acknowledgement
+
+This architecture is developed and maintained by **NAPCORE**, supporting the harmonisation of National Access Points across Europe.
+
+`https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png`
+
+`https://napcore.eu/wp-content/themes/napcore/images/eu.png`
