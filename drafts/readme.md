@@ -14,7 +14,9 @@ Drafts follow the naming pattern:
 Examples:
 
 ```
-1.1.0-draft.1 1.1.0-draft.2 2.0.0-draft.1
+1.1.0-draft.1
+1.1.0-draft.2
+2.0.0-draft.1
 ```
 
 The folder:
