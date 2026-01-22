@@ -1,4 +1,3 @@
-Here’s a significantly improved, clearer, more structured, and more professional README you can drop directly into the repository.  
 # National Access Point Reference Architecture (NRA)
 
 ![Version](https://img.shields.io/github/v/tag/NAPCORE/NAP-Reference-Architecture?label=version&style=flat-square)
@@ -61,6 +60,5 @@ It is intended for policymakers, NAP operators, architects, and technical teams 
 
 This architecture is developed and maintained by **NAPCORE**, supporting the harmonisation of National Access Points across Europe.
 
-`https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png`
-
-`https://napcore.eu/wp-content/themes/napcore/images/eu.png`
+![NAPCORE Logo](https://napcore.eu/wp-content/themes/napcore/images/napcore-logo.png)
+![EU Logo](https://napcore.eu/wp-content/themes/napcore/images/eu.png)
