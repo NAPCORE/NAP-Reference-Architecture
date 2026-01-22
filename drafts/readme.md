@@ -1,8 +1,63 @@
-# NAP Reference Architecture Working Drafts
+# NAP Reference Architecture – Working Drafts
 
-This folder serves for development of new releases in `drafts/next`. Draft is a living document and integrate revisions of the current release, and it is used as a basis for new releases.
+This directory contains **working drafts** of the National Access Point Reference Architecture (NRA).  
+Drafts represent ongoing development and are the primary place where updates, corrections, and improvements are made before they are included in an official release.
 
-When **ready for release**, clean the `drafts/next` content since all will become a new tagged release and:
+## 📂 Structure and Naming
+
+Drafts follow the naming pattern:
+
+'''
+<target-version>-draft.<iteration>
+'''
+
+Examples:
+
+'''
+1.1.0-draft.1 1.1.0-draft.2 2.0.0-draft.1
+'''
+
+The folder:
+
+'''
+/drafts/latest
+'''
+
+always contains the **most up‑to‑date working draft**, including corrections to existing releases.
+
+## 🧭 Purpose of This Directory
+
+Drafts are used for:
+
+- Preparing the next NRA release  
+- Incorporating feedback from Member States and experts  
+- Correcting issues identified in published releases  
+- Testing new modelling approaches  
+- Updating documentation and high‑level views  
+
+Once a draft is validated and approved, it becomes a new numbered release.
+
+## 🛠 Working With Draft Models
+
+To open draft models in Enterprise Architect:
+
+1. Create a **new, empty EA project**.  
+2. Load the **FRAME toolbox**.  
+3. Import the draft `.xmi` file.  
+
+Importing the XMI before loading the toolbox will break stereotypes.
+
+## 📌 Relationship to Releases
+
+Stable, published versions of the NRA are available in:
+
+'''
+/releases
+'''
+
+Drafts should be considered **pre‑release material** and may change without notice.
+
+When **ready for release**, clean the `drafts/latest` content since all will become a new tagged release and:
 
 - commit, 
 - tag (´vX.Y.Z´ to e.g. ´v2.1.1´) and 
@@ -15,6 +70,3 @@ git tag -a vX.Y.Z -m "Release vX.Y.Z"
 git push origin vX.Y.Z
 ```
 
-## Licence
-
-NAP Reference Architecture working drafts are distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

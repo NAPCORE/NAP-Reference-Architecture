@@ -1,47 +1,45 @@
 # NAP Reference Architecture – Official Releases
 
-This directory contains the **official, versioned releases** of the National Access Point Reference Architecture (NRA).  
-Each release is published as a standalone, immutable package and reflects the consolidated understanding agreed within NAPCORE at the time of publication.
+This directory contains the **official, stable releases** of the National Access Point Reference Architecture (NRA).  
+Each release is immutable and reflects the consolidated understanding agreed within NAPCORE at the time of publication.
 
 ## 📦 Contents of Each Release
 
-A typical release folder (e.g., `1.0.0/`) includes:
+A typical release folder (e.g., `1.1.0/`) includes:
 
 - **Architecture Model Files**
-  - `*.qea` — Enterprise Architect project file containing the NRA model
-  - `*.xmi` — Model exchange file for importing into other EA projects or tools
+  - `*.qea` — Enterprise Architect project file
+  - `*.xmi` — Model exchange file
 
 - **Documentation**
-  - `*.docx` — Word export of the NRA documentation (high‑level views, descriptions, recommendations)
-  - Additional supporting documents where relevant
-
-- **Methodology Material**
-  - FRAME‑based methodology documents used to structure the NRA
-  - Supporting descriptions of modelling conventions and stereotypes
+  - Word-exported NRA documentation (`*.docx`)
+  - Supporting descriptions and methodology material
 
 ## 🧭 Purpose of This Directory
 
-The releases serve as:
-- A **stable reference** for Member States and stakeholders
-- A **baseline for implementation** of harmonised National Access Points
-- A **citation‑ready source** for policy, technical, and organisational work
+Releases serve as:
+- A **stable reference** for Member States and stakeholders  
+- A **baseline for implementation** of harmonised NAPs  
+- A **citation‑ready source** for policy and technical work  
 
-Releases are **not modified** after publication.  
-All ongoing work happens in the `/drafts` directory.
+Releases are **not modified** after publication.
 
-## 🛠 Working With the Architecture Files
+## 🔄 Relationship to Drafts
 
-To open a release in Enterprise Architect (EA):
+Corrections, improvements, and new features are developed in:
 
-1. Create a **new, empty EA project**.
-2. **Load the FRAME toolbox** into the project.
-3. Import the NRA model using the provided `.xmi` file  
-   *(Importing the XMI before loading the toolbox will break stereotypes.)*
+'''
+/drafts
+'''
 
-The `.qea` file can also be opened directly if you prefer a ready‑to‑use EA project.
+The next release is prepared through draft iterations such as:
 
-## 🔄 Where to Find Work in Progress
+'''
+1.2.0-draft.1 1.2.0-draft.2
+'''
 
-Drafts and upcoming changes are maintained in: `/drafts`
+The folder `/drafts/latest` always contains the most current draft.
 
-These drafts will eventually be consolidated into the next numbered release.
+
+
+
